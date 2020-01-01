@@ -1,0 +1,20 @@
+#overview {
+  background-color: #222222;
+  color: #fff;
+  text-align: right;
+}
+
+#overview .title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  #overview .col-md-4 {
+    margin-top: 10px;
+  }
+}
+
+#overview img {
+  width: 100%;
+}

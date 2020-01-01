@@ -1,0 +1,65 @@
+.community-events .title-block {
+  border-bottom: 1px solid #292929;
+}
+
+.community-events .title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.05;
+  margin-bottom: 34px;
+}
+
+.content-block {
+  display: block;
+  position: relative;
+  margin-bottom: 30px;
+  background-color: #000;
+}
+.content-block .description h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: normal;
+  margin: 0;
+  padding-bottom: 4px;
+  line-height: 1.3em;
+}
+.content-block.transparent {
+  background-color: transparent;
+}
+
+.content-block .thumbnails {
+  position: relative;
+  overflow: hidden;
+}
+
+.content-block .overlay {
+  background-image: url('https://www.gnomon.edu/assets/content-block-hover-overlay-b5969bf1176b224e01a5938ef0beba8a6f1d8498edc78e466d970f1105fef2c9.png');
+  position: absolute;
+  width: 768px;
+  height: 768px;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 0.25s linear;
+}
+
+.content-block .description {
+  background: #000;
+  padding: 15px;
+  font-size: 13px;
+  color: #898989;
+  transition: background-color 0.25s linear;
+}
+
+a.content-block:hover {
+  text-decoration: none;
+}
+
+a.content-block:hover .thumbnails .overlay {
+  opacity: 1;
+}
+
+a.content-block:hover .description {
+  background-color: #252525;
+}

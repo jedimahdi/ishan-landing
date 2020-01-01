@@ -1,0 +1,44 @@
+#pricing {
+  background-color: #000;
+  color: #fff;
+  font-size: 18px;
+  position: relative;
+  overflow: hidden;
+}
+#pricing .row {
+  align-items: center;
+  text-align: right;
+}
+#pricing .pricing__circle {
+  position: absolute;
+  bottom: -150px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #222;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 992px) {
+  #pricing .row > div:nth-child(2) {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+  }
+  #pricing .row > div:nth-child(3) {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 992px) {
+  #pricing .pricing__circle {
+    display: none;
+  }
+  #pricing .row > div {
+    margin-top: 20px;
+  }
+  #pricing .row > div:first-child {
+    margin-top: 0;
+  }
+}

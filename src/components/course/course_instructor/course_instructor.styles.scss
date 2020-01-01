@@ -1,0 +1,49 @@
+#instructors {
+  background-image: url('https://www.cgmasteracademy.com/uploads/media/course/0001/03/75c029702c1a218b566de079d139a78062b7c26c.jpeg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+#instructors::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+#instructors .instructor-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+#instructors .instructor-profile img {
+  width: 56px;
+  height: 56px;
+}
+#instructors .instructor-profile .instructor-name {
+  margin-right: 10px;
+}
+#instructors .instructor-profile .instructor-name h6 {
+  color: #779db9;
+  margin: 0;
+  font-weight: 700;
+}
+#instructors .instructor-profile .instructor-name div {
+  color: #fff;
+  font-size: 12px;
+}
+#instructors .instructor-bio {
+  font-size: 14px;
+  color: #fff;
+}
+#instructors .instructor-banner {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,32 @@
+#gallery .photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 0;
+}
+#gallery .photo-gallery > a {
+  position: relative;
+}
+@media screen and (min-width: 1000px) {
+  #gallery .photo-gallery > a {
+    width: calc(100% / 6);
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+  #gallery .photo-gallery > a {
+    width: calc(100% / 3);
+  }
+}
+@media screen and (max-width: 500px) {
+  #gallery .photo-gallery > a {
+    width: calc(100% / 1);
+  }
+}
+
+#gallery .gallery-caption {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  margin: auto;
+  color: #fff;
+}

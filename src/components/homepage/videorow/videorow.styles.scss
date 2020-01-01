@@ -1,0 +1,54 @@
+.home_videorow {
+  background: url('https://www.gnomon.edu/assets/programs/bfa/backgrounds/texture4h_bfa_backgrounds-08305530c9a5b6837acb6acd06ec823801e6d8ccb8bda65bf14a86f038d84251.jpg')
+    center center no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-top: 1px solid #b2864a;
+  border-bottom: 1px solid #b2864a;
+  background-color: #000;
+}
+
+.home_videorow .title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+.home_videorow .subtitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #b2864a;
+}
+
+.programs-list {
+  margin-top: 16px;
+  margin-bottom: 45px;
+}
+
+.programs-list .program-title {
+  font-size: 24px;
+  color: #fff;
+  margin: 24px 0 3px;
+}
+
+.programs-list .program-subtitle {
+  font-size: 14px;
+  color: #898989;
+  margin: 0 40px;
+}
+
+.programs-list a.program:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.programs-list a.program:hover .program-title {
+  text-decoration: underline;
+}
+@media screen and (max-width: 768px) {
+  .programs-list > div {
+    margin-bottom: 40px;
+  }
+}

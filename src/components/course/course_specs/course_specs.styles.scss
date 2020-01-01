@@ -1,0 +1,29 @@
+#specs .spec-item {
+  display: flex;
+  color: #fff;
+  margin-bottom: 4px;
+  justify-content: space-between;
+}
+
+#specs .spec-item .spec-title {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+#specs .spec-item .spec-value {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.71;
+  color: #9b9b9b;
+}
+
+#specs .spec-items-column .spec-item {
+  flex-flow: column;
+}
+#specs .spec-items-row .spec-item .spec-value {
+  width: 45%;
+}
+@media (max-width: 768px) {
+  #specs .spec-items-row {
+    margin-top: 20px;
+  }
+}

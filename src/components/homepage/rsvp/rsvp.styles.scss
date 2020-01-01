@@ -1,0 +1,40 @@
+.rsvp {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.rsvp .title {
+  font-size: 48px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.rsvp .btn-primary {
+  color: #000;
+  background-color: #d7d7d7;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 0;
+  font-size: 15px;
+}
+.rsvp .btn-primary:hover {
+  color: #000;
+  background-color: #fff;
+}
+.rsvp .w-60px {
+  display: inline-block;
+  vertical-align: top;
+  width: 60px;
+  height: 10px;
+}
+@media screen and (max-width: 768px) {
+  .rsvp .title {
+    font-size: 28px;
+  }
+  .rsvp .w-60px {
+    width: 40px;
+    height: 10px;
+  }
+}
