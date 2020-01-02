@@ -1,0 +1,26 @@
+.fields-list {
+  .field-info {
+    a {
+      color: #fff;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+  .course {
+    background-color: #000;
+    margin-bottom: 30px;
+
+    .course-body {
+      padding: 10px;
+
+      h3 {
+        font-size: 20px;
+        margin-top: 10px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}

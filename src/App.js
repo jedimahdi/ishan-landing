@@ -12,6 +12,10 @@ import './assets/css/owlcarousel/owl.theme.default.min.css';
 import HomePage from './pages/homepage/homepage.component';
 import CoursePage from './pages/course/course.component';
 import CourseList from './pages/course_list/course_list.component';
+import AboutPage from './pages/about/about.component';
+import ContactPage from './pages/contact/contact.component';
+import FieldsPage from './pages/fields/fields.component';
+import FieldPage from './pages/field/field.component';
 
 import Navbar from './components/navbar/navbar.component';
 import Footer from './components/footer/footer.component';
@@ -53,6 +57,10 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route path="/course" component={CoursePage} />
           <Route path="/courses" component={CourseList} />
+          <Route path="/about" component={AboutPage} />
+          <Route path="/contact" component={ContactPage} />
+          <Route path="/fields" component={FieldsPage} />
+          <Route path="/field" component={FieldPage} />
         </Switch>
         <Footer />
       </div>

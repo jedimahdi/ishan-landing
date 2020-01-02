@@ -50,7 +50,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/courses">
+                <Link className="nav-link" to="/contact">
                   تماس با ما
                 </Link>
               </li>

@@ -1,0 +1,129 @@
+.field-page {
+  .field-title {
+    border-bottom: 2px solid #b2864a;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 36px;
+    }
+    small {
+      font-size: 24px;
+      color: #b7b7b7;
+    }
+  }
+  .field-sidebar {
+    background-color: #000;
+    padding: 15px 10px;
+
+    .sidebar-title {
+      margin-bottom: 10px;
+      h5 {
+        margin-bottom: 0.1rem;
+      }
+      small {
+        color: #666;
+      }
+    }
+
+    ul {
+      padding-right: 15px;
+      li {
+        list-style: none;
+        a {
+          color: #898989;
+          font-size: 14px;
+
+          &:hover {
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  h6.next-terms {
+    font-size: 26px;
+  }
+
+  .table.upcoming-terms {
+    border: 0;
+    color: #fff;
+    font-size: 13px;
+    thead {
+      background-color: rgb(28, 28, 28);
+      th {
+        border: 1px solid #252525;
+        text-align: center;
+        border-top: 0;
+
+        &:nth-child(1) {
+          background-color: #000;
+          // text-align: left;
+          border-right: 0;
+          color: #898989;
+        }
+      }
+    }
+    tbody {
+      background-color: #252525;
+      tr {
+        td {
+          border: 1px solid #252525;
+          text-align: center;
+          &:nth-child(1) {
+            background-color: #000;
+            // text-align: left;
+            border-right: none;
+            color: #898989;
+          }
+        }
+
+        &:last-child {
+          td {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  #terms {
+    background-color: #000;
+
+    .curriculum-title {
+      margin-bottom: 20px;
+
+      small {
+        font-size: 15px;
+        color: #898989;
+      }
+    }
+  }
+
+  .term {
+    .term-num {
+      font-size: 32px;
+      margin-bottom: 20px;
+      padding-top: 10px;
+      color: #b2864a;
+      border-top: 2px solid #b2864a;
+    }
+  }
+
+  .field-course {
+    background-color: #111;
+    margin-bottom: 30px;
+
+    .course-info {
+      padding: 15px;
+      h3 {
+        font-size: 22px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
