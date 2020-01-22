@@ -1,0 +1,106 @@
+#learning_process {
+  border-top: 1px solid #b2864a;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: url('https://www.gnomon.edu/assets/programs/bfa/backgrounds/texture5h_bfa_backgrounds-36821220714524bb97b80cedb3013bf13fe9f8287478c25bd737fd30ff0b973c.jpg')
+    center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .title_group {
+    border-bottom: 2px solid #b2864a;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.05;
+      color: #b2864a;
+    }
+    small {
+      font-size: 24px;
+      line-height: 1.05;
+      color: #fff;
+    }
+  }
+
+  .black-box {
+    background-color: #000;
+    padding: 15px;
+    h4 {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      padding-right: 20px;
+      li {
+        list-style: none;
+        a {
+          color: #898989;
+        }
+      }
+    }
+  }
+
+  .process-list {
+    color: #898989;
+    li {
+      list-style-type: square;
+    }
+  }
+
+  .sub-buttons {
+    .button:first-child {
+      margin-right: 0;
+    }
+
+    .button {
+      font-weight: bold;
+    }
+  }
+}
+
+#bazare-kar {
+  border-top: 1px solid #b2864a;
+  padding-top: 30px;
+  background: url('https://www.gnomon.edu/assets/programs/bfa/backgrounds/texture2h_bfa_backgrounds-a70bd0a41202b79ce6022a68f435e731c80cfb849d1313f660eb6b77936b0845.jpg')
+    center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  h2 {
+    color: #fff;
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  .title_group {
+    margin-bottom: 50px;
+    h3 {
+      color: #b2864a;
+      font-size: 32px;
+    }
+    small {
+      font-size: 18px;
+      line-height: 1.5;
+      color: #fff;
+    }
+  }
+
+  .process-step {
+    font-size: 14px;
+    h4 {
+      color: #fff;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid #c3c3c3;
+      font-size: 16px;
+    }
+  }
+}

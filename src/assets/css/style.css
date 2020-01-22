@@ -755,3 +755,6 @@ a.link-larger:hover {
   color: #898989;
   text-decoration: none;
 }
+ul li:has(.show) {
+  background-color: #fff;
+}

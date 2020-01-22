@@ -4,3 +4,12 @@ body {
 p {
   color: #898989;
 }
+
+a {
+  z-index: 3;
+}
+
+#modal-hook {
+  display: flex;
+  justify-content: center;
+}

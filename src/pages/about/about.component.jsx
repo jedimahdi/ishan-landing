@@ -12,6 +12,7 @@ const AboutPage = () => {
       <Header
         media="https://www.gnomon.edu/assets/masthead-gradient-3ad4ef328def7513b35239de408de7e91bf1e35950b2fc37a707093498d06eeb.png), url(https://www.gnomon.edu/assets/bg_pageheaders/bg_headerimages59-86a0d282aa2541d48d9b7fbb086524e6d38a43106654babd9e4b1d593672e0ef.jpg"
         small
+        breadcrump="درباره ما"
       />
       <section id="about" className="text-right text-white">
         <div className="seprator"></div>

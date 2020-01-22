@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useCallback } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import api from './utils/api';
 
@@ -14,6 +14,13 @@ import CoursePage from './pages/course/course.component';
 import CourseList from './pages/course_list/course_list.component';
 import AboutPage from './pages/about/about.component';
 import ContactPage from './pages/contact/contact.component';
+import TermsPage from './pages/terms/terms.component';
+import InstructorsPage from './pages/instructors/instructors.component';
+import SingleInstructorPage from './pages/instructors/single_instructor.component';
+import LearningProcessPage from './pages/other/learning_process.component';
+import InternshipPage from './pages/other/internship.component';
+import LaborPage from './pages/other/labor.component';
+
 import FieldsPage from './pages/fields/fields.component';
 import FieldPage from './pages/field/field.component';
 
@@ -58,7 +65,18 @@ function App() {
           <Route path="/course" component={CoursePage} />
           <Route path="/courses" component={CourseList} />
           <Route path="/about" component={AboutPage} />
+
           <Route path="/contact" component={ContactPage} />
+          <Route path="/terms" component={TermsPage} />
+          <Route
+            path="/instructors/:instructor_name"
+            component={SingleInstructorPage}
+          />
+          <Route path="/instructors" component={InstructorsPage} />
+          <Route path="/learning_process" component={LearningProcessPage} />
+          <Route path="/internship" component={InternshipPage} />
+          <Route path="/labor" component={LaborPage} />
+
           <Route path="/fields" component={FieldsPage} />
           <Route path="/field" component={FieldPage} />
         </Switch>
