@@ -26,6 +26,7 @@ import SharedworkspacePage from './pages/other/shared_workspace.component';
 import EnrollPage from './pages/other/enroll.component';
 import FeePage from './pages/other/fee.component';
 import EducationPage from './pages/other/education.component';
+import FaqPage from './pages/other/faq.component';
 
 import FieldsPage from './pages/fields/fields.component';
 import FieldPage from './pages/field/field.component';
@@ -88,6 +89,7 @@ function App() {
           <Route path="/enroll" component={EnrollPage} />
           <Route path="/fee" component={FeePage} />
           <Route path="/education" component={EducationPage} />
+          <Route path="/faq" component={FaqPage} />
 
           <Route path="/fields" component={FieldsPage} />
           <Route path="/field" component={FieldPage} />

@@ -26,13 +26,13 @@ const LearningProcessPage = () => {
 
                 <ul>
                   <li>
-                    <Link to="/">نحوه ثبت نام</Link>
+                    <Link to="/enroll">نحوه ثبت نام</Link>
                   </li>
                   <li>
-                    <Link to="/">شهریه و نحوه پرداخت</Link>
+                    <Link to="/fee">شهریه و نحوه پرداخت</Link>
                   </li>
                   <li>
-                    <Link to="/">سوالات متداول</Link>
+                    <Link to="/faq">سوالات متداول</Link>
                   </li>
                 </ul>
               </div>

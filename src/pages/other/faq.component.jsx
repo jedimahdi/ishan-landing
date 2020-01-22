@@ -1,0 +1,40 @@
+import React from 'react';
+
+import Header from '../../components/homepage/header/header.component';
+import Image1Src from '../../assets/images/other/faqq.jpg';
+import FAQ_DATA from './faq.json';
+import './enroll.styles.scss';
+
+const FaqPage = () => {
+  return (
+    <React.Fragment>
+      <Header media={Image1Src} small breadcrump="سوالات متداول" />
+      <section className="steps-section text-white">
+        <div className="seprator"></div>
+        <div className="container">
+          <div className="title_group">
+            <small>ورود به دروازه هنرهای دیجیتالی ،برنامه نویس،بازیسازی</small>
+            <h2>سوالات متداول</h2>
+          </div>
+          <div className="row">
+            <div className="col-md-12 ">
+              <div className="step-section">
+                <h4>سوالات عمومی</h4>
+
+                {FAQ_DATA.map(faq => (
+                  <div className="question">
+                    <h5>{faq.question}</h5>
+                    <p>{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="seprator"></div>
+      </section>
+    </React.Fragment>
+  );
+};
+
+export default FaqPage;

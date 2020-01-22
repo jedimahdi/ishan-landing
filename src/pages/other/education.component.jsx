@@ -29,13 +29,13 @@ const EducationPage = () => {
                 </div>
                 <ul>
                   <li>
-                    <Link to="/">پذیرش و ثبت نام</Link>
+                    <Link to="/enroll">پذیرش و ثبت نام</Link>
                   </li>
                   <li>
-                    <Link to="/">شهریه و طریقه پرداخت</Link>
+                    <Link to="/fee">شهریه و طریقه پرداخت</Link>
                   </li>
                   <li>
-                    <Link to="/">سوالات متداول</Link>
+                    <Link to="/faq">سوالات متداول</Link>
                   </li>
                 </ul>
               </div>
