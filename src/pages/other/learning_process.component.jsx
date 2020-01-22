@@ -10,7 +10,7 @@ const LearningProcessPage = () => {
   return (
     <React.Fragment>
       <Header media={Image1Src} small breadcrump="فرایند آموزش" />
-      <section id="learning_process" className="text-right text-white">
+      <section id="learning_process" className="text-white">
         <div className="seprator"></div>
         <div className="container">
           <div className="title_group">
@@ -20,7 +20,9 @@ const LearningProcessPage = () => {
           <div className="row">
             <div className="col-md-3">
               <div className="black-box">
-                <h4>فرآیند آموزشی در پلتفرم آیشن </h4>
+                <div className="black-title">
+                  <h4>فرآیند آموزشی در پلتفرم آیشن </h4>
+                </div>
 
                 <ul>
                   <li>
@@ -75,7 +77,7 @@ const LearningProcessPage = () => {
       </section>
       <section id="bazare-kar">
         <div className="seprator"></div>
-        <div className="container text-right">
+        <div className="container ">
           <h2>توانمند شدن فراگیران در طراز بازار کار </h2>
           <p>
             آموزش هایی که یک فرد قبل از ورود به بازار کار می بیند غالبا آموزش

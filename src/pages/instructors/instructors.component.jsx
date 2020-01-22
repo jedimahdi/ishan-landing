@@ -10,10 +10,10 @@ const InstructorsPage = () => {
   return (
     <React.Fragment>
       <Header media={Image1Src} small breadcrump="اساتید" />
-      <section id="about" className="text-right text-white">
+      <section id="about" className=" text-white">
         <div className="seprator"></div>
         <div className="container">
-          <h2>مدربیان </h2>
+          <h2>مربیان </h2>
           <div className="row">
             <div className="col-md-12 ">
               <p>

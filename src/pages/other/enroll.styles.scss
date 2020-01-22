@@ -1,0 +1,27 @@
+.steps-section {
+  .title_group {
+    margin-bottom: 30px;
+
+    h2 {
+      font-weight: 700;
+      font-size: 36px;
+    }
+
+    small {
+      color: #b7b7b7;
+      font-size: 24px;
+    }
+  }
+  .step-section {
+    border-top: 2px solid #b2864a;
+    padding-top: 6px;
+    padding-bottom: 30px;
+
+    h4 {
+      color: #b2864a;
+    }
+    .button {
+      margin-right: 0;
+    }
+  }
+}

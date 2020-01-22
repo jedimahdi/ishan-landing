@@ -12,7 +12,7 @@ const InternshipPage = () => {
   return (
     <React.Fragment>
       <Header media={Image1Src} small breadcrump="کارآموزی" />
-      <section id="internship" className="text-right text-white">
+      <section id="internship" className="text-white">
         <div className="seprator"></div>
         <div className="container">
           <div className="row">

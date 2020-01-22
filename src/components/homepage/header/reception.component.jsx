@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 
 import Image1Src from '../../../assets/images/header/MOSHAVEEH-HEADER.jpg';
@@ -12,7 +13,6 @@ const ReceptionOverlay = props => {
         <div className="attention">
           <aside>
             <p>
-              {' '}
               پذیرش در آیشن ابتدا با ارسال درخواست دوره و یا رشته از طرف فراگیر
               شروع می شود و با توجه به توانمندی ها و نمونه کارهای ارسالی ،
               صلاحیت شما احراز و میتوانید فصل جدیدی از آموزش را شروع کنید
@@ -29,10 +29,7 @@ const ReceptionOverlay = props => {
         </aside>
       </div>
       <div className="col-md-3">
-        <a
-          className="subsection-grid-item"
-          href="https://www.gnomon.edu/about/alumni"
-        >
+        <Link className="subsection-grid-item" to="/education">
           <img
             className="drop-shadow img-responsive-full visible-lg"
             src={Image1Src}
@@ -45,13 +42,10 @@ const ReceptionOverlay = props => {
             شود که هنرآموز در کدام دوره ( دورۀ اتصال به بازارکار یا دورۀ مهارت
             افزایی ) می تواند ثبت نام نماید.
           </p>
-        </a>
+        </Link>
       </div>
       <div className="col-md-3">
-        <a
-          className="subsection-grid-item"
-          href="https://www.gnomon.edu/about/campus"
-        >
+        <Link className="subsection-grid-item" to="/enroll">
           <img
             className="drop-shadow img-responsive-full visible-lg"
             src={Image2Src}
@@ -59,13 +53,10 @@ const ReceptionOverlay = props => {
           />
           <h3>نحوه ثبت نام</h3>
           <p>فرم درخواست دوره و یا رشته مورد نظر را به صورت آنلاین پر کنید</p>
-        </a>
+        </Link>
       </div>
       <div className="col-md-3">
-        <a
-          className="subsection-grid-item"
-          href="https://www.gnomon.edu/about/instructors"
-        >
+        <Link className="subsection-grid-item" to="/fee">
           <img
             className="drop-shadow img-responsive-full visible-lg"
             src={Image3Src}
@@ -74,9 +65,9 @@ const ReceptionOverlay = props => {
           <h3>پرداخت شهریه</h3>
           <p>
             شهریه دوره ها و رشته ها بر اساس ساعات و شاخص های مهارتی آن رشته
-            تعیین شده است{' '}
+            تعیین شده است
           </p>
-        </a>
+        </Link>
       </div>
     </div>
   );

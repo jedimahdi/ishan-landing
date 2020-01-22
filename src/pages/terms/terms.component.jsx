@@ -8,7 +8,7 @@ const TermsPage = () => {
   return (
     <React.Fragment>
       <Header media={Image1Src} small breadcrump="قوانین" />
-      <section id="about" className="text-right text-white">
+      <section id="about" className="text-white">
         <div className="seprator"></div>
         <div className="container">
           <h2>قوانین و مقررات</h2>

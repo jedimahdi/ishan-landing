@@ -16,7 +16,7 @@ const SingleInstructorPage = () => {
   return (
     <React.Fragment>
       <Header media={Image1Src} small breadcrump="اساتید" />
-      <section id="single_instructor" className="text-right text-white">
+      <section id="single_instructor" className="text-white">
         <div className="seprator"></div>
         <div className="container">
           <div className="title_group">

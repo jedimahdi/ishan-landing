@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 
 import Image1Src from '../../../assets/images/header/shetabdahandeh-HEDEAR.jpg';
@@ -21,10 +22,10 @@ const ReceptionOverlay = props => {
         <aside>
           <ul className="subsection-links">
             <li>
-              <a href="https://www.gnomon.edu/about/staff">فضای کار اشتراکی</a>
+              <Link to="/shared_workspace">فضای کار اشتراکی</Link>
             </li>
             <li>
-              <a href="https://www.gnomon.edu/about/staff">خدمات منتورینگ</a>
+              <Link to="/mentoring">خدمات منتورینگ</Link>
             </li>
           </ul>
         </aside>
@@ -49,10 +50,7 @@ const ReceptionOverlay = props => {
         </a>
       </div>
       <div className="col-md-4">
-        <a
-          className="subsection-grid-item"
-          href="https://www.gnomon.edu/about/campus"
-        >
+        <Link className="subsection-grid-item" to="/technical_services">
           <img
             className="drop-shadow img-responsive-full visible-lg"
             src={Image2Src}
@@ -63,7 +61,7 @@ const ReceptionOverlay = props => {
             تمامی امکانات فنی و نوین شرکت رایمون مدیا زیر یک سقف و به بهترین نحو
             در اختیار فعالان این حوزه قرار خواهد گرفت.
           </p>
-        </a>
+        </Link>
       </div>
     </div>
   );

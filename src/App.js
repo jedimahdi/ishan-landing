@@ -20,6 +20,12 @@ import SingleInstructorPage from './pages/instructors/single_instructor.componen
 import LearningProcessPage from './pages/other/learning_process.component';
 import InternshipPage from './pages/other/internship.component';
 import LaborPage from './pages/other/labor.component';
+import TechServicesPage from './pages/other/tech_services.component';
+import MentorPage from './pages/other/mentor.component';
+import SharedworkspacePage from './pages/other/shared_workspace.component';
+import EnrollPage from './pages/other/enroll.component';
+import FeePage from './pages/other/fee.component';
+import EducationPage from './pages/other/education.component';
 
 import FieldsPage from './pages/fields/fields.component';
 import FieldPage from './pages/field/field.component';
@@ -76,6 +82,12 @@ function App() {
           <Route path="/learning_process" component={LearningProcessPage} />
           <Route path="/internship" component={InternshipPage} />
           <Route path="/labor" component={LaborPage} />
+          <Route path="/technical_services" component={TechServicesPage} />
+          <Route path="/mentoring" component={MentorPage} />
+          <Route path="/shared_workspace" component={SharedworkspacePage} />
+          <Route path="/enroll" component={EnrollPage} />
+          <Route path="/fee" component={FeePage} />
+          <Route path="/education" component={EducationPage} />
 
           <Route path="/fields" component={FieldsPage} />
           <Route path="/field" component={FieldPage} />

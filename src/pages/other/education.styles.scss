@@ -1,0 +1,39 @@
+#edu-basics {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h3 {
+    color: #fff;
+  }
+
+  h4 {
+    color: #fff;
+  }
+
+  p {
+    color: #eee;
+  }
+}
+
+.steps-buttons {
+  .button {
+    display: block;
+    width: 100%;
+    padding: 20px 10px;
+    position: relative;
+
+    i {
+      font-size: 18px;
+      padding-left: 20px;
+      position: absolute;
+      right: 25px;
+      top: 23px;
+    }
+  }
+}
+
+.steps-buttons-title {
+  color: #fff;
+  margin-bottom: 30px;
+}
