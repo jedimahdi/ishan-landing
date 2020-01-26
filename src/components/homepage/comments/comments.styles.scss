@@ -2,21 +2,29 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  img {
+    height: 100%;
+  }
 }
 
 .quote {
   position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
 
 .quotebefore {
-  /* color: #898989; */
-  color: #fff;
+  color: #898989;
   font-size: 22px;
   line-height: 1.25;
+  text-align: justify;
 }
 
 .quote-name {
   color: #fff;
-  font-size: 32px;
+  font-size: 20px;
   margin-top: 10px;
 }

@@ -28,9 +28,10 @@ const Videorow = () => {
             <ReactPlayer
               url={settingItems['homepage_introduction_video']}
               width="100%"
-              height="600px"
+              height="500px"
               controls={true}
               playing={false}
+              // light={true}
             />
           </div>
         </div>

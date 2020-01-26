@@ -1,15 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import Header from '../../components/homepage/header/header.component';
 import Image1Src from '../../assets/images/teachers/techerssssss.jpg';
-import TEACHERS_DATA from './teachers.json';
+import { SERVER_URL } from '../../shared/util/vars';
+import { useHttpClient } from '../../shared/hooks/http-hook';
+import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
 import './instructors.styles.scss';
 
 const InstructorsPage = () => {
+  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  const [teachers, setTeachers] = useState();
+
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const responseData = await sendRequest(
+          `${SERVER_URL}teacher`,
+          'POST',
+          JSON.stringify({}),
+          {
+            'Content-Type': 'application/json'
+          }
+        );
+        console.log(responseData);
+        setTeachers(responseData);
+      } catch (err) {
+        console.log(err.message);
+      }
+    };
+    fetchCourses();
+  }, [sendRequest]);
+
   return (
     <React.Fragment>
       <Header media={Image1Src} small breadcrump="اساتید" />
+      {isLoading && (
+        <div className="center">
+          <LoadingSpinner />
+        </div>
+      )}
       <section id="about" className=" text-white">
         <div className="seprator"></div>
         <div className="container">
@@ -35,42 +65,44 @@ const InstructorsPage = () => {
         <div className="seprator"></div>
       </section>
 
-      <section className="community-events text-right">
-        <div className="seprator-lg" />
+      {!isLoading && teachers && (
+        <section className="community-events text-right">
+          <div className="seprator-lg" />
 
-        <div className="container">
-          <div className="row">
-            {TEACHERS_DATA.map(teacher => (
-              <div className="col-md-4 col-sm-6" key={teacher.id}>
-                <Link
-                  to={`/instructors/${teacher.name}`}
-                  className="content-block transparent"
-                >
-                  <div className="thumbnails">
-                    <div className="overlay" />
-                    <img
-                      className="img-responsive-full"
-                      src={`/images/${teacher.bg_image}`}
-                      alt="bg_teacher"
-                    />
-                    <img
-                      className="teacher-image img-responsive"
-                      src={`/images/${teacher.fg_image}`}
-                      alt="teacher"
-                    />
-                  </div>
-                  <div className="description">
-                    <h4>{teacher.name}</h4>
-                    {teacher.subtitle}
-                  </div>
-                </Link>
-              </div>
-            ))}
+          <div className="container">
+            <div className="row">
+              {teachers.map(teacher => (
+                <div className="col-md-4 col-sm-6" key={teacher.id}>
+                  <Link
+                    to={`/instructors/${teacher._id}`}
+                    className="content-block transparent"
+                  >
+                    <div className="thumbnails">
+                      <div className="overlay" />
+                      <img
+                        className="img-responsive-full"
+                        src={`${SERVER_URL}${teacher.bg_image}`}
+                        alt="bg_teacher"
+                      />
+                      <img
+                        className="teacher-image img-responsive"
+                        src={`${SERVER_URL}${teacher.fg_image}`}
+                        alt="teacher"
+                      />
+                    </div>
+                    <div className="description">
+                      <h4>{teacher.name}</h4>
+                      {teacher.subtitle}
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className="seprator" />
-      </section>
+          <div className="seprator" />
+        </section>
+      )}
     </React.Fragment>
   );
 };

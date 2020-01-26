@@ -29,6 +29,15 @@ const SharedworkspacePage = () => {
                 شرح زیر است:
               </p>
 
+              <div className="logos d-flex justify-content-between align-items-center">
+                <img src={Image2Src} alt="icon" />
+                <img src={Image3Src} alt="icon" />
+                <img src={Image4Src} alt="icon" />
+                <img src={Image5Src} alt="icon" />
+                <img src={Image6Src} alt="icon" />
+                <img src={Image7Src} alt="icon" />
+              </div>
+
               <h6>فضای کار اشتراکی چیست؟</h6>
               <p>
                 فضای کار اشتراکی (coworking space) به مجموعه‌ای گفته می‌شود که
@@ -99,15 +108,6 @@ const SharedworkspacePage = () => {
                 پرانرژی و پر نشاط را تجربه می‌کنید و می‌توانید از امکاناتی مثل
                 فضای سبز، کافی شاپ و محل استراحت استفاده کنید.
               </p>
-
-              <div className="logos d-flex justify-content-between align-items-center">
-                <img src={Image2Src} alt="icon" />
-                <img src={Image3Src} alt="icon" />
-                <img src={Image4Src} alt="icon" />
-                <img src={Image5Src} alt="icon" />
-                <img src={Image6Src} alt="icon" />
-                <img src={Image7Src} alt="icon" />
-              </div>
             </div>
           </div>
         </div>

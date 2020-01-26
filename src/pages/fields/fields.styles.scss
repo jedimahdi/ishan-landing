@@ -24,3 +24,37 @@
     }
   }
 }
+
+#fields {
+  .title_group {
+    margin-bottom: 40px;
+  }
+  h2 {
+    color: #fff;
+    font-weight: bold;
+  }
+}
+
+.field {
+  margin-bottom: 30px;
+  .field-time {
+    color: #898989;
+    margin-bottom: 25px;
+  }
+  .my-green {
+    font-family: 'CircularStd', Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: #8edd65;
+    padding-left: 5px;
+  }
+
+  h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+  p {
+    color: #b7b7b7;
+  }
+}

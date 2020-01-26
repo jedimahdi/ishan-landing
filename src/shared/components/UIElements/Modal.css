@@ -1,10 +1,10 @@
 .dialogue {
   z-index: 200;
   position: fixed;
-  top: 22vh;
+  top: 12vh;
   left: 10%;
   width: 80%;
-  background: white;
+  background: #111;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 8px;
 }
@@ -12,8 +12,12 @@
 .dialogue__header {
   width: 100%;
   padding: 1rem 0.5rem;
-  background: #2a006e;
+  background: #111;
   color: white;
+}
+
+.dialogue label {
+  color: #fff;
 }
 
 .dialogue__header h2 {
@@ -29,10 +33,10 @@
 }
 
 @media (min-width: 768px) {
-  .dialogue {
+  /* .dialogue {
     left: calc(50% - 20rem);
     width: 40rem;
-  }
+  } */
 }
 
 .dialogue-enter {

@@ -19,16 +19,16 @@ const Comments = () => {
 
         let newItem = (
           <div className="row" key={comment._id}>
-            <div className="col-md-7 text-right quote">
-              <div className="quotebefore">{comment.text}</div>
-              <div className="quote-name">{comment.name}</div>
-            </div>
-            <div className="col-md-4">
+            <div className="col-md-7">
               <img
                 src={`http://localhost:3000/comments/${comment.image}`}
                 className="img-responsive"
                 alt="comment"
               />
+            </div>
+            <div className="col-md-5 quote">
+              <div className="quotebefore">{comment.text}</div>
+              <div className="quote-name">{comment.name}</div>
             </div>
           </div>
         );
@@ -48,13 +48,16 @@ const Comments = () => {
     mouseDrag: false
   };
 
-  if (settingItems['homepage_instructor_comments'] !== '') {
+  console.log(settingItems['homepage_comments_bg_image']);
+  if (
+    settingItems['homepage_instructor_comments'] !== '' &&
+    settingItems['homepage_comments_bg_image'] !== ''
+  ) {
     return (
       <section
-        className="juangil py-5"
+        className="juangil"
         style={{
-          backgroundImage: `url
-      (${settingItems['homepage_comments_bg_image']})`
+          backgroundImage: `url(${settingItems['homepage_comments_bg_image']})`
         }}
       >
         <div className="container">

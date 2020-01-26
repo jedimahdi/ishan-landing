@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 
 import Image1Src from '../../../assets/images/fields/animat.jpg';
@@ -10,13 +11,10 @@ import Image6Src from '../../../assets/images/fields/RENDER.jpg';
 
 const FieldsOverlay = props => {
   const content = (
-    <div className="dialogue yamm-content main-menu-container">
+    <div className="custom-modal yamm-content main-menu-container">
       <div className="row">
         <div className="col-md-4">
-          <a
-            className="subsection-grid-item"
-            href="https://www.gnomon.edu/academics/foundation-in-art-&amp;-design"
-          >
+          <Link className="subsection-grid-item" to="/fields">
             <img
               className="drop-shadow img-responsive-full visible-lg"
               src={Image1Src}
@@ -30,7 +28,7 @@ const FieldsOverlay = props => {
               ویژگی های انیمیت آشنا می شوید و ترم سوم با توجه به داده ها می
               توانید در یک پروژه واقعی قرار بگیرید
             </p>
-          </a>
+          </Link>
         </div>
 
         <div className="col-md-4">

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Header from '../../components/homepage/header/header.component';
-import Button from '../../shared/components/FormElements/Button';
 
 import Image1Src from '../../assets/images/other/ETESAL-BAZARKAR.jpg';
 

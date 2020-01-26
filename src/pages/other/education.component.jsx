@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/homepage/header/header.component';
 import Image1Src from '../../assets/images/other/1.jpg';
 import Image2Src from '../../assets/images/other/021.jpg';
-import Image3Src from '../../assets/images/other/03.jpg';
+import Image3Src from '../../assets/images/other/031.jpg';
 import Image4Src from '../../assets/images/other/05.jpg';
 import Button from '../../shared/components/FormElements/Button';
 import './education.styles.scss';
@@ -67,14 +67,13 @@ const EducationPage = () => {
         <div className="seprator-lg"></div>
         <div className="container">
           <div className="row">
-            <div className="col-md-4"></div>
             <div className="col-md-8">
               <h3>اصولی یاد بگیرید</h3>
               <p>
                 مشاوران به دانشجویان این فرصت را می دهند تا علاقه و مهارت خود را
                 در زمینه های مختلف ارزیابی کنند ، ضمن اینکه مهارت های اساسی را
                 که برای ساختن یک هنرآموز طراز بازار کار نیاز هست به او خواهیم
-                داد{' '}
+                داد
               </p>
               <h4>امکان استفاده رشته ها برای دانش آموزان</h4>
               <p>
@@ -97,11 +96,16 @@ const EducationPage = () => {
         </div>
         <div className="seprator-lg"></div>
       </section>
-      <section style={{ backgroundImage: `url(${Image4Src})` }}>
+      <section
+        className="great-comment"
+        style={{ backgroundImage: `url(${Image4Src})` }}
+      >
+        <div className="seprator-lg"></div>
         <div className="seprator-lg"></div>
         <div className="container">
           <div className="row">
-            <div className="col-md-8">
+            <div className="col-md-5"></div>
+            <div className="col-md-7">
               <p>
                 برای آموزش خود سرمایه گذاری کنید. صبر کنید، مگر گیتس از دانشگاه
                 هاروارد اخراج نشده بود؟ بله، او اخراج شد. اما در جلسه “از من هر
@@ -113,6 +117,7 @@ const EducationPage = () => {
             </div>
           </div>
         </div>
+        <div className="seprator-lg"></div>
         <div className="seprator-lg"></div>
       </section>
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useCallback } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import api from './utils/api';
 
@@ -11,7 +11,7 @@ import './assets/css/owlcarousel/owl.theme.default.min.css';
 
 import HomePage from './pages/homepage/homepage.component';
 import CoursePage from './pages/course/course.component';
-import CourseList from './pages/course_list/course_list.component';
+import CourseListPage from './pages/course_list/course_list.component';
 import AboutPage from './pages/about/about.component';
 import ContactPage from './pages/contact/contact.component';
 import TermsPage from './pages/terms/terms.component';
@@ -27,6 +27,7 @@ import EnrollPage from './pages/other/enroll.component';
 import FeePage from './pages/other/fee.component';
 import EducationPage from './pages/other/education.component';
 import FaqPage from './pages/other/faq.component';
+import AcceleratorPage from './pages/other/accelerator.component';
 
 import FieldsPage from './pages/fields/fields.component';
 import FieldPage from './pages/field/field.component';
@@ -47,7 +48,7 @@ function normalizeSettings(settings) {
 
 function App() {
   const [isLoading, setLoading] = useState(true);
-  const { settingItems, setSettings } = useContext(SettingsContext);
+  const { setSettings } = useContext(SettingsContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -69,14 +70,14 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/course" component={CoursePage} />
-          <Route path="/courses" component={CourseList} />
+          <Route path="/course/:course_id" component={CoursePage} />
+          <Route path="/courses" component={CourseListPage} />
           <Route path="/about" component={AboutPage} />
 
           <Route path="/contact" component={ContactPage} />
           <Route path="/terms" component={TermsPage} />
           <Route
-            path="/instructors/:instructor_name"
+            path="/instructors/:instructor_id"
             component={SingleInstructorPage}
           />
           <Route path="/instructors" component={InstructorsPage} />
@@ -90,9 +91,10 @@ function App() {
           <Route path="/fee" component={FeePage} />
           <Route path="/education" component={EducationPage} />
           <Route path="/faq" component={FaqPage} />
+          <Route path="/accelerator" component={AcceleratorPage} />
 
           <Route path="/fields" component={FieldsPage} />
-          <Route path="/field" component={FieldPage} />
+          <Route path="/field/:field_id" component={FieldPage} />
         </Switch>
         <Footer />
       </div>

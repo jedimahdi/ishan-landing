@@ -13,7 +13,7 @@ import SupportOverlay from './support.component';
 
 import './header.styles.scss';
 
-const Header = ({ media, small, breadcrump }) => {
+const Header = ({ media, small, breadcrump, no_header }) => {
   const { settingItems } = useContext(SettingsContext);
   const [showAbout, setShowAbout] = useState(false);
   const [showCourses, setShowCourses] = useState(false);
@@ -72,8 +72,50 @@ const Header = ({ media, small, breadcrump }) => {
 
   return (
     <header>
-      <div className="masthead" style={{ height: `${small ? '55' : '80'}vh` }}>
-        {media ? (
+      <div
+        className="masthead"
+        style={{ height: `${small ? (no_header ? '11' : '55') : '80'}vh` }}
+      >
+        {!no_header &&
+          (media ? (
+            <div>
+              <div
+                className="bg-video"
+                style={{
+                  backgroundImage: `url(${media})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'center center',
+                  backgroundSize: 'cover'
+                }}
+              ></div>
+              <div className="header-breadcrumb container">
+                <div className="breadcrumb-url container">
+                  <span>
+                    <Link to="/">خانه</Link>
+                  </span>
+                  <span>
+                    <i className="fa fa-angle-left"></i>
+                  </span>
+                  <span>{breadcrump}</span>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="bg-video">
+              <ReactPlayer
+                id="bg-video"
+                url={settingItems['homepage_header_video']}
+                width="100%"
+                height="100%"
+                preload="auto"
+                playing
+                className="react-player"
+                muted
+                loop
+              />
+            </div>
+          ))}
+        {no_header && (
           <div>
             <div
               className="bg-video"
@@ -85,7 +127,13 @@ const Header = ({ media, small, breadcrump }) => {
               }}
             ></div>
             <div className="header-breadcrumb container">
-              <div className="breadcrumb-url container">
+              <div
+                className="breadcrumb-url container"
+                style={{
+                  borderTop: 'solid 1px #222',
+                  backgroundColor: 'transparent'
+                }}
+              >
                 <span>
                   <Link to="/">خانه</Link>
                 </span>
@@ -95,16 +143,6 @@ const Header = ({ media, small, breadcrump }) => {
                 <span>{breadcrump}</span>
               </div>
             </div>
-          </div>
-        ) : (
-          <div className="bg-video">
-            <ReactPlayer
-              id="bg-video"
-              url={settingItems['homepage_header_video']}
-              width="100%"
-              height="100%"
-              playing
-            />
           </div>
         )}
         <div className="main-menu-wrapper">

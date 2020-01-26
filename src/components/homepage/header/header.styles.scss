@@ -1,4 +1,4 @@
-.dialogue {
+.custom-modal {
   z-index: 200;
   position: absolute;
   top: 12vh;
@@ -8,49 +8,49 @@
   border-top: 1px solid #3b3b3b;
 }
 
-.dialogue__header {
+.custom-modal__header {
   width: 100%;
   padding: 1rem 0.5rem;
   background: #2a006e;
   color: white;
 }
 
-.dialogue__header h2 {
+.custom-modal__header h2 {
   margin: 0.5rem;
 }
 
-.dialogue__content {
+.custom-modal__content {
   padding: 1rem 0.5rem;
 }
 
-.dialogue__footer {
+.custom-modal__footer {
   padding: 1rem 0.5rem;
 }
 
 @media (min-width: 768px) {
-  .dialogue {
+  .custom-modal {
     // left: calc(50% - 20rem);
     // width: 40rem;
   }
 }
 
-.dialogue-enter {
+.custom-modal-enter {
   transform: translateY(-10rem);
   opacity: 0;
 }
 
-.dialogue-enter-active {
+.custom-modal-enter-active {
   transform: translateY(0);
   opacity: 1;
   transition: all 200ms;
 }
 
-.dialogue-exit {
+.custom-modal-exit {
   transform: translateY(0);
   opacity: 1;
 }
 
-.dialogue-exit-active {
+.custom-modal-exit-active {
   transform: translateY(-10rem);
   opacity: 0;
   transition: all 200ms;
@@ -178,5 +178,34 @@
     bottom: 0;
     right: 0;
     left: 0;
+  }
+}
+
+.react-player video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  width: 1950px !important;
+  min-height: 100% !important;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 992px) {
+  .masthead {
+    height: 465px !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .masthead {
+    height: 465px !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1416px) {
+  .masthead {
+    height: 565px !important;
   }
 }

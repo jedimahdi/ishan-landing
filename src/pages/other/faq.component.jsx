@@ -21,8 +21,8 @@ const FaqPage = () => {
               <div className="step-section">
                 <h4>سوالات عمومی</h4>
 
-                {FAQ_DATA.map(faq => (
-                  <div className="question">
+                {FAQ_DATA.map((faq, idx) => (
+                  <div className="question" key={idx}>
                     <h5>{faq.question}</h5>
                     <p>{faq.answer}</p>
                   </div>

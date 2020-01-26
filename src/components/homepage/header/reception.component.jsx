@@ -8,7 +8,7 @@ import Image3Src from '../../../assets/images/header/shahriyeh-HEADER.jpg';
 
 const ReceptionOverlay = props => {
   const content = (
-    <div className="dialogue row yamm-content main-menu-container">
+    <div className="custom-modal row yamm-content main-menu-container">
       <div className="col-md-3">
         <div className="attention">
           <aside>
@@ -23,7 +23,7 @@ const ReceptionOverlay = props => {
         <aside>
           <ul className="subsection-links">
             <li>
-              <a href="https://www.gnomon.edu/about/staff">درخواست دوره</a>
+              <Link to="/faq">سوالات متداول</Link>
             </li>
           </ul>
         </aside>

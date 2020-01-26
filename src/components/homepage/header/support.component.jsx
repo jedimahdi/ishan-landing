@@ -7,7 +7,7 @@ import Image2Src from '../../../assets/images/header/fani-HEADER.jpg';
 
 const ReceptionOverlay = props => {
   const content = (
-    <div className="dialogue row yamm-content main-menu-container">
+    <div className="custom-modal row yamm-content main-menu-container">
       <div className="col-md-4">
         <div className="attention">
           <aside>
@@ -31,10 +31,7 @@ const ReceptionOverlay = props => {
         </aside>
       </div>
       <div className="col-md-4">
-        <a
-          className="subsection-grid-item"
-          href="https://www.gnomon.edu/about/alumni"
-        >
+        <Link className="subsection-grid-item" to="/accelerator">
           <img
             className="drop-shadow img-responsive-full visible-lg"
             src={Image1Src}
@@ -47,7 +44,7 @@ const ReceptionOverlay = props => {
             بهترین آن‌ها که در کمترین زمان به بیشترین پیشرفت برسد را انتخاب
             می‌کنیم.
           </p>
-        </a>
+        </Link>
       </div>
       <div className="col-md-4">
         <Link className="subsection-grid-item" to="/technical_services">

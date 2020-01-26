@@ -12,7 +12,6 @@ const EnrollPage = () => {
         <div className="seprator"></div>
         <div className="container">
           <div className="title_group">
-            <small>ورود به دروازه هنرهای دیجیتالی ،برنامه نویس،بازیسازی</small>
             <h2>شهریه و نحوه پرداخت</h2>
             <p>
               شهریه دوره ها و رشته ها بر اساس ساعات و شاخص های مهارتی آن رشته

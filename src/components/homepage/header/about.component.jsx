@@ -8,7 +8,7 @@ import Image3Src from '../../../assets/images/header/asatid.png';
 
 const AboutOverlay = props => {
   const content = (
-    <div className="dialogue row yamm-content main-menu-container">
+    <div className="custom-modal row yamm-content main-menu-container">
       <div className="col-md-3">
         <div className="attention">
           <aside>

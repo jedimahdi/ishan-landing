@@ -1,85 +1,100 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import Header from '../../components/homepage/header/header.component';
 import Sidebar from '../../components/sidebar/sidebar.component';
 import Button from '../../components/button/button.component';
+import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
+import { useHttpClient } from '../../shared/hooks/http-hook';
+import { SERVER_URL } from '../../shared/util/vars';
+import Image1Src from '../../assets/images/reshtehaa.jpg';
 
 import './fields.styles.scss';
 
 const FieldsPage = () => {
+  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  const [fields, setFields] = useState();
+
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const responseData = await sendRequest(
+          `${SERVER_URL}field`,
+          'POST',
+          JSON.stringify({}),
+          {
+            'Content-Type': 'application/json'
+          }
+        );
+
+        setFields(responseData);
+      } catch (err) {
+        console.log(err.message);
+      }
+    };
+    fetchCourses();
+  }, [sendRequest]);
+
   return (
     <React.Fragment>
-      <Header
-        media="https://www.gnomon.edu/assets/bg_pageheaders/bg_headerimages57-71db2b7e873aa7bc604639d62056061b15684175995aa3d2b3f56fd7da9f0574.jpg"
-        small
-      />
-      <div className="seprator"></div>
-      <section id="fields">
-        <div className="container">
-          <div className="row">
-            <Sidebar title="رشته ها">
-              <li>
-                <Link>رشته یک</Link>
-              </li>
-              <li>
-                <Link>رشته دو</Link>
-              </li>
-            </Sidebar>
+      <Header media={Image1Src} small breadcrump="رشته ها" />
+      {isLoading && (
+        <div className="center">
+          <LoadingSpinner />
+        </div>
+      )}
 
-            <div className="col-md-9 text-right text-white">
-              <h2>رشته ها</h2>
+      <div className="seprator"></div>
+
+      {!isLoading && fields && (
+        <section id="fields">
+          <div className="container">
+            <div className="title_group">
+              <h2>معرفی رشته ها</h2>
               <p>
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
-                در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
-                نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان
-                جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را
-                برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در
-                زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و
-                دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد
-                وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات
-                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                آیشن در جهت تربیت و پرورش نیروهای طراز بازار کار اقدام به
+                برگزاری ترمیک در زمینه هنرهای دیجیتالی،بازیسازی و برنامه نویسی
+                کرده است تا افرادی که تمایل دارند به صورت قدم به قدم مهارتی را
+                آموزش ببینند و فرآیند آموزش را از پایه و ابتدا شروع کنند، می
+                توانند با مشاوران با تجربه در هر حوزه مشورت کنند و مسیر شغلی و
+                حرفه ای خود را آغاز کنند .
               </p>
-              <div className="row">
-                <div className="col-md-3">
-                  <Button url="/" name="صحبت با مشاور" />
-                </div>
-                <div className="col-md-3">
-                  <Button url="/" name="همه دوره ها" />
-                </div>
-              </div>
+            </div>
+
+            <div className="fields">
+              {fields.map(field => (
+                <Field field={field} key={field._id} />
+              ))}
             </div>
           </div>
-        </div>
-      </section>
-      <div className="seprator-lg"></div>
-      <div className="fields-list">
-        <Field secondMode={false} />
-        <Field secondMode={true} />
-        <Field secondMode={false} />
-        <Field secondMode={true} />
-      </div>
+        </section>
+      )}
     </React.Fragment>
   );
 };
 
-const Field = ({ field, secondMode }) => {
+const Field = ({ field }) => {
   return (
-    <section
-      className="field text-right text-white"
-      style={{ backgroundColor: secondMode ? '#1c1c1c' : '#000' }}
-    >
-      <div className="seprator-lg"></div>
-      <div className="container">
+    <Link to={`/field/${field._id}`} className="field-link">
+      <div className="field">
+        <div className="field-time">
+          <span className="my-green">—</span> {field.duration} هفته
+        </div>
         <div className="row">
-          {secondMode ? <FieldCourses /> : <FieldInfo />}
-          {secondMode ? <FieldInfo /> : <FieldCourses />}
+          <div className="col-md-5">
+            <img
+              src={`${SERVER_URL}${field.img}`}
+              alt="field"
+              className="img-responsive"
+            />
+          </div>
+          <div className="col-md-7">
+            <h3>{field.title}</h3>
+            <p>{field.desc}</p>
+          </div>
         </div>
       </div>
-      <div className="seprator-lg"></div>
-    </section>
+    </Link>
   );
 };
 
