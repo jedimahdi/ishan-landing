@@ -72,7 +72,7 @@ const Course = props => {
           <img
             src={`${SERVER_URL}${props.course.img}`}
             alt="course"
-            className="img-responsive"
+            className="img-responsive course-bg-image"
           />
           <div className="course-body">
             <h3>{props.course.title}</h3>

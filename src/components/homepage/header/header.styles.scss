@@ -196,16 +196,25 @@
   .masthead {
     height: 465px !important;
   }
+  .masthead-no-header {
+    height: 11vh !important;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
   .masthead {
     height: 465px !important;
   }
+  .masthead-no-header {
+    height: 11vh !important;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1416px) {
   .masthead {
     height: 565px !important;
+  }
+  .masthead-no-header {
+    height: 11vh !important;
   }
 }

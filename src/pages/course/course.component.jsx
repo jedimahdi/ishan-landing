@@ -27,6 +27,7 @@ const CoursePage = () => {
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
   const [course, setCourse] = useState();
   const [teacher, setTeacher] = useState();
+  const [listCourses, setListCourses] = useState();
   const [formModal, setFormModal] = useState(false);
   const [videoModal, setVideoModal] = useState(false);
 
@@ -50,10 +51,22 @@ const CoursePage = () => {
             'Content-Type': 'application/json'
           }
         );
+
+        const coursesList = await sendRequest(
+          `${SERVER_URL}field`,
+          'POST',
+          JSON.stringify({}),
+          {
+            'Content-Type': 'application/json'
+          }
+        );
+
         console.log(responseData);
         console.log(teacherData);
+        console.log(coursesList);
         setCourse(responseData);
         setTeacher(teacherData);
+        setListCourses(coursesList);
       } catch (err) {
         console.log(err.message);
       }
@@ -84,17 +97,16 @@ const CoursePage = () => {
         </div>
       )}
 
-      {!isLoading && course && teacher && (
+      {!isLoading && course && teacher && listCourses && (
         <div className="container">
           <div className="seprator"></div>
           <div className="row">
             <Sidebar title="رشته ها">
-              <li>
-                <Link to="/">تست ۱</Link>
-              </li>
-              <li>
-                <Link to="/">تست 2</Link>
-              </li>
+              {listCourses.map(field => (
+                <li key={field._id}>
+                  <Link to={`/field/${field._id}`}>{field.title}</Link>
+                </li>
+              ))}
             </Sidebar>
             <div className="col-md-9">
               <div className="course-details">

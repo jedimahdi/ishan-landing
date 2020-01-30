@@ -7,7 +7,6 @@ import Image1Src from '../../assets/images/teachers/techerssssss.jpg';
 import { SERVER_URL } from '../../shared/util/vars';
 import { useHttpClient } from '../../shared/hooks/http-hook';
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
-import TEACHERS_DATA from './teachers.json';
 import './single_instructor.styles.scss';
 
 const SingleInstructorPage = () => {

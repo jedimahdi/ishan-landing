@@ -73,7 +73,7 @@ const Header = ({ media, small, breadcrump, no_header }) => {
   return (
     <header>
       <div
-        className="masthead"
+        className={`masthead ${no_header ? 'masthead-no-header' : ''}`}
         style={{ height: `${small ? (no_header ? '11' : '55') : '80'}vh` }}
       >
         {!no_header &&

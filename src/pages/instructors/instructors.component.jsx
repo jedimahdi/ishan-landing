@@ -72,7 +72,7 @@ const InstructorsPage = () => {
           <div className="container">
             <div className="row">
               {teachers.map(teacher => (
-                <div className="col-md-4 col-sm-6" key={teacher.id}>
+                <div className="col-md-4 col-sm-6" key={teacher._id}>
                   <Link
                     to={`/instructors/${teacher._id}`}
                     className="content-block transparent"
@@ -80,7 +80,7 @@ const InstructorsPage = () => {
                     <div className="thumbnails">
                       <div className="overlay" />
                       <img
-                        className="img-responsive-full"
+                        className="img-responsive-full teacher-bg-image"
                         src={`${SERVER_URL}${teacher.bg_image}`}
                         alt="bg_teacher"
                       />

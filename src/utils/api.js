@@ -1,5 +1,6 @@
 import axios from 'axios';
+import { API_BASE_URL } from '../shared/util/vars';
 
 export default axios.create({
-  baseURL: 'http://localhost:3000/v1/'
+  baseURL: API_BASE_URL + 'v1/'
 });

@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
-import API from '../../../utils/api';
 import OwlCarousel from 'react-owl-carousel2';
+
+import API from '../../../utils/api';
+import { API_BASE_URL } from '../../../shared/util/vars';
 // import { Link } from 'react-router-dom';
 
 import { SettingsContext } from '../../../providers/settings/settings.provider';
@@ -21,7 +23,7 @@ const Comments = () => {
           <div className="row" key={comment._id}>
             <div className="col-md-7">
               <img
-                src={`http://localhost:3000/comments/${comment.image}`}
+                src={`${API_BASE_URL}comments/${comment.image}`}
                 className="img-responsive"
                 alt="comment"
               />

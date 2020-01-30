@@ -4,6 +4,7 @@ import OwlCarousel from 'react-owl-carousel2';
 import { Link } from 'react-router-dom';
 
 import { SettingsContext } from '../../../providers/settings/settings.provider';
+import { API_BASE_URL } from '../../../shared/util/vars';
 
 import './articles.styles.scss';
 
@@ -23,7 +24,7 @@ const Articles = () => {
               <span className="crop">
                 <img
                   className="img-responsive"
-                  src={`http://localhost:3000/articles/${article.image}`}
+                  src={`${API_BASE_URL}articles/${article.image}`}
                   alt="slider"
                 />
               </span>
