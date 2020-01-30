@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ishan-landing/static/css/main.4d4212e3.chunk.css",
-    "main.js": "/ishan-landing/static/js/main.f341080f.chunk.js",
-    "main.js.map": "/ishan-landing/static/js/main.f341080f.chunk.js.map",
+    "main.js": "/ishan-landing/static/js/main.a6dd48b5.chunk.js",
+    "main.js.map": "/ishan-landing/static/js/main.a6dd48b5.chunk.js.map",
     "runtime-main.js": "/ishan-landing/static/js/runtime-main.4fc3a4e5.js",
     "runtime-main.js.map": "/ishan-landing/static/js/runtime-main.4fc3a4e5.js.map",
     "static/js/2.6dbd53ec.chunk.js": "/ishan-landing/static/js/2.6dbd53ec.chunk.js",
     "static/js/2.6dbd53ec.chunk.js.map": "/ishan-landing/static/js/2.6dbd53ec.chunk.js.map",
     "index.html": "/ishan-landing/index.html",
-    "precache-manifest.7c185aa891c8798187051af9c5496f48.js": "/ishan-landing/precache-manifest.7c185aa891c8798187051af9c5496f48.js",
+    "precache-manifest.ba6acbbfa82ac0c010bbd26ae103bd9c.js": "/ishan-landing/precache-manifest.ba6acbbfa82ac0c010bbd26ae103bd9c.js",
     "service-worker.js": "/ishan-landing/service-worker.js",
     "static/css/main.4d4212e3.chunk.css.map": "/ishan-landing/static/css/main.4d4212e3.chunk.css.map",
     "static/js/2.6dbd53ec.chunk.js.LICENSE": "/ishan-landing/static/js/2.6dbd53ec.chunk.js.LICENSE",
@@ -52,6 +52,6 @@
     "static/js/runtime-main.4fc3a4e5.js",
     "static/js/2.6dbd53ec.chunk.js",
     "static/css/main.4d4212e3.chunk.css",
-    "static/js/main.f341080f.chunk.js"
+    "static/js/main.a6dd48b5.chunk.js"
   ]
 }
