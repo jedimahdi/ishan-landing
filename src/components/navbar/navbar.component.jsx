@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
-import { SettingsContext } from '../../providers/settings/settings.provider';
 import { Link } from 'react-router-dom';
 
+import { SettingsContext } from '../../providers/settings/settings.provider';
+import { toPersianDigits } from '../../shared/util/helpers';
 import Logo from '../../assets/images/logo.svg';
 
 const Navbar = () => {
@@ -36,7 +37,7 @@ const Navbar = () => {
                 <span>{settingItems['contact_address']}</span>
               </li>
               <li className="nav-item">
-                <span>{settingItems['contact_number']}</span>
+                <span>{toPersianDigits(settingItems['contact_number'])}</span>
               </li>
               <li className="nav-item">
                 <Link to="/" className="academiclink">

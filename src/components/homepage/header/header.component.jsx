@@ -152,6 +152,11 @@ const Header = ({ media, small, breadcrump, no_header }) => {
               role="navigation"
             >
               <ul className="nav navbar-nav container-lg">
+                <li className={`yamm-fw`}>
+                  <Link to="/" role="button">
+                    <span>خانه</span>
+                  </Link>
+                </li>
                 <li className={`yamm-fw ${showAbout ? 'show' : ''}`}>
                   <Link to="/" role="button" onClick={handleShowAbout}>
                     <span>درباره ما</span>

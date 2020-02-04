@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import Header from '../../components/homepage/header/header.component';
-import Sidebar from '../../components/sidebar/sidebar.component';
-import Button from '../../components/button/button.component';
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
 import { useHttpClient } from '../../shared/hooks/http-hook';
 import { SERVER_URL } from '../../shared/util/vars';
@@ -16,7 +14,7 @@ const FieldsPage = () => {
   const [fields, setFields] = useState();
 
   useEffect(() => {
-    const fetchCourses = async () => {
+    const fetchFields = async () => {
       try {
         const responseData = await sendRequest(
           `${SERVER_URL}field`,
@@ -32,7 +30,7 @@ const FieldsPage = () => {
         console.log(err.message);
       }
     };
-    fetchCourses();
+    fetchFields();
   }, [sendRequest]);
 
   return (

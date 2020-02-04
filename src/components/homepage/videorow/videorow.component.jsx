@@ -41,7 +41,7 @@ const Videorow = () => {
 
         <div className="row programs-list text-center">
           <div className="col-sm-4">
-            <Link to="/" className="program">
+            <Link to="/labor" className="program">
               <img
                 className="img-responsive"
                 src={settingItems['homepage_introduction_first_image']}
@@ -56,7 +56,7 @@ const Videorow = () => {
             </Link>
           </div>
           <div className="col-sm-4">
-            <Link to="/" className="program">
+            <Link to="/internship" className="program">
               <img
                 className="img-responsive"
                 src={settingItems['homepage_introduction_second_image']}
@@ -71,7 +71,7 @@ const Videorow = () => {
             </Link>
           </div>
           <div className="col-sm-4">
-            <Link to="/" className="program">
+            <Link to="/learning_process" className="program">
               <img
                 className="img-responsive"
                 src={settingItems['homepage_introduction_third_image']}

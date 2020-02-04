@@ -34,6 +34,10 @@ import FieldPage from './pages/field/field.component';
 
 import Navbar from './components/navbar/navbar.component';
 import Footer from './components/footer/footer.component';
+import SpeakAdviser from './pages/other/speak_to_adviser.component';
+import AdviserCourse from './pages/other/adviser_in_course.component';
+import SupportAndServices from './pages/other/support_services.component';
+import SeminarPage from './pages/other/seminar.component';
 
 function normalizeSettings(settings) {
   const t = settings.map(setting => {
@@ -92,6 +96,10 @@ function App() {
           <Route path="/education" component={EducationPage} />
           <Route path="/faq" component={FaqPage} />
           <Route path="/accelerator" component={AcceleratorPage} />
+          <Route path="/speak-to-adviser" component={SpeakAdviser} />
+          <Route path="/adviser-in-course" component={AdviserCourse} />
+          <Route path="/support-and-services" component={SupportAndServices} />
+          <Route path="/seminar" component={SeminarPage} />
 
           <Route path="/fields" component={FieldsPage} />
           <Route path="/field/:field_id" component={FieldPage} />

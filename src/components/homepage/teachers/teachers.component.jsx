@@ -20,7 +20,7 @@ const Teachers = () => {
             </div>
             <p>{settingItems['homepage_teacher_desc']}</p>
             <p>
-              <Link to="/" className="link-larger">
+              <Link to="/instructors" className="link-larger">
                 جستجو اساتید <i className="fa fa-long-arrow-left" />
               </Link>
             </p>

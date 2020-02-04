@@ -61,11 +61,11 @@ const FieldPage = () => {
             <div className="field-courses">
               <h3>دوره های رشته</h3>
               <div className="row">
-                {field.clist.map(c => {
+                {field.clist.map((c, idx) => {
                   let course = c.course;
 
                   return (
-                    <div className="col-md-6" key={course._id}>
+                    <div className="col-md-6" key={idx}>
                       <Link
                         to={`/course/${course._id}`}
                         className="content-block transparent"

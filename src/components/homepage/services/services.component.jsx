@@ -12,7 +12,7 @@ const Services = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-6">
-            <Link to="/">
+            <Link to="/support-and-services">
               <img
                 className="img-responsive"
                 width="800"
@@ -23,7 +23,7 @@ const Services = () => {
             </Link>
           </div>
           <div className="col-md-6">
-            <Link to="/">
+            <Link to="/education">
               <img
                 className="img-responsive"
                 width="800"
@@ -74,7 +74,7 @@ const Services = () => {
               className="next-step-action"
             >
               <div className="text">
-                {settingItems['homepage_services_fourth_link']}
+                {settingItems['homepage_services_fourth_name']}
               </div>
             </Link>
           </div>

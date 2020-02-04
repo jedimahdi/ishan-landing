@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Header from '../../components/homepage/header/header.component';
 import Button from '../../shared/components/FormElements/Button';
+import { toPersianDigits } from '../../shared/util/helpers';
 import Image1Src from '../../assets/images/other/FARAHANI.jpg';
 import './learning_process.styles.scss';
 
@@ -51,8 +52,12 @@ const LearningProcessPage = () => {
                 تمامی اشکالات خود را برطرف کنید{' '}
               </p>
               <div className="sub-buttons">
-                <Button inverse>صحبت با یک مشاور</Button>
-                <Button inverse>مشاوره حین دوره</Button>
+                <Button to="/speak-to-adviser" inverse>
+                  صحبت با یک مشاور
+                </Button>
+                <Button to="/adviser-in-course" inverse>
+                  مشاوره حین دوره
+                </Button>
               </div>
             </div>
             <div className="col-md-4">
@@ -95,7 +100,7 @@ const LearningProcessPage = () => {
           <div className="row">
             <div className="col-md-3">
               <div className="process-step">
-                <h4>مشاوره و تعیین دوره</h4>
+                <h4>{toPersianDigits('1')}. مشاوره و تعیین دوره</h4>
                 <p>
                   پس از اعلام آمادگی هنرآموز در سایت ، جهت مشاوره با هنرآموز
                   ارتباط گرفته می شود و هنرآموز در یکی از دوره ها - اتصال به
@@ -105,7 +110,7 @@ const LearningProcessPage = () => {
             </div>
             <div className="col-md-3">
               <div className="process-step">
-                <h4>ثبت نام و دریافت پلتفرم آموزشی</h4>
+                <h4>{toPersianDigits('2')}. ثبت نام و دریافت پلتفرم آموزشی</h4>
                 <p>
                   هنرآموز با مراجعه به سایت اقدام به ثبت نام کرده و پلتفرم آیشن
                   را دریافت می کند
@@ -114,7 +119,7 @@ const LearningProcessPage = () => {
             </div>
             <div className="col-md-3">
               <div className="process-step">
-                <h4>ارسال ویدئو و تمرین جلسات</h4>
+                <h4>{toPersianDigits('3')}. ارسال ویدئو و تمرین جلسات</h4>
                 <p>
                   به صورت هفتگی ویدئو جلسات برای هنرآموز ارسال می شود و هنرآموز
                   پس از یادگیری، تمرین آن جلسه را تا پایان هفته برای استاد ارسال
@@ -124,7 +129,7 @@ const LearningProcessPage = () => {
             </div>
             <div className="col-md-3">
               <div className="process-step">
-                <h4>جلسه رفع اشکال آنلاین</h4>
+                <h4>{toPersianDigits('4')}. جلسه رفع اشکال آنلاین</h4>
                 <p>
                   در میانه دوره یک جلسه به صورت آنلاین برگزار می شود که در آن به
                   رفع اشکال هنر آموزان پرداخته می شود
@@ -135,7 +140,7 @@ const LearningProcessPage = () => {
           <div className="row">
             <div className="col-md-3">
               <div className="process-step">
-                <h4>ارتباط با استاد</h4>
+                <h4>{toPersianDigits('5')}. ارتباط با استاد</h4>
                 <p>
                   تمرین ارسالی، توسط استاد بررسی و نمـــــره هر جلسـه در
                   پلتفــــرم برای هنرآموز نمایش داده می شود
@@ -144,7 +149,7 @@ const LearningProcessPage = () => {
             </div>
             <div className="col-md-3">
               <div className="process-step">
-                <h4>مشاوره در طول دوره </h4>
+                <h4>{toPersianDigits('6')}. مشاوره در طول دوره </h4>
                 <p>
                   در طول دوره مشاور آموزشی با هنرآموز در ارتباط بوده و از روند
                   پیشرفت هنرآموز مطلع میرشود
@@ -153,7 +158,7 @@ const LearningProcessPage = () => {
             </div>
             <div className="col-md-3">
               <div className="process-step">
-                <h4>برگزاری ورکشاپ</h4>
+                <h4>{toPersianDigits('7')}. برگزاری ورکشاپ</h4>
                 <p>
                   در انتهای دوره، یک ورکشاپ به صـــــورت حضـــــوری برگــــزار
                   مــــی شــــود تا هنــــــرآمـــــــــــوزان سؤالات خود را در
@@ -163,7 +168,7 @@ const LearningProcessPage = () => {
             </div>
             <div className="col-md-3">
               <div className="process-step">
-                <h4>اتمام دوره و اعلام نمرات</h4>
+                <h4>{toPersianDigits('8')}. اتمام دوره و اعلام نمرات</h4>
                 <p>
                   پس از اتمــــــام دوره نمــــــرات نهایــــی اعلام مــــی
                   شـــــود و در صورتی که نمرۀ هنرآمــــــوز به حدنصاب رسیده

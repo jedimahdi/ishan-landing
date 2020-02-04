@@ -8,6 +8,7 @@ import Image3Src from '../../assets/images/other/031.jpg';
 import Image4Src from '../../assets/images/other/05.jpg';
 import Button from '../../shared/components/FormElements/Button';
 import './education.styles.scss';
+import ButtonIcon from '../../shared/components/FormElements/ButtonIcon';
 
 const EducationPage = () => {
   return (
@@ -128,28 +129,16 @@ const EducationPage = () => {
 
           <div className="row steps-buttons">
             <div className="col-md-3">
-              <Button danger>
-                <i className="fa fa-angle-left"></i>
-                <span>با یک مشاور صحبت کنید</span>
-              </Button>
+              <ButtonIcon>با یک مشاور صحبت کنید</ButtonIcon>
             </div>
             <div className="col-md-3">
-              <Button danger>
-                <i className="fa fa-angle-left"></i>
-                <span>خدمات فنی و پشتیبانی</span>
-              </Button>
+              <ButtonIcon>خدمات فنی و پشتیبانی</ButtonIcon>
             </div>
             <div className="col-md-3">
-              <Button danger>
-                <i className="fa fa-angle-left"></i>
-                <span>شتابدهنده</span>
-              </Button>
+              <ButtonIcon>شتابدهنده</ButtonIcon>
             </div>
             <div className="col-md-3">
-              <Button danger>
-                <i className="fa fa-angle-left"></i>
-                <span>خدمات فنی و پشتیبانی</span>
-              </Button>
+              <ButtonIcon>خدمات فنی و پشتیبانی</ButtonIcon>
             </div>
           </div>
         </div>

@@ -20,10 +20,15 @@ const LaborPage = () => {
                 <h4>لینک ها</h4>
                 <ul>
                   <li>
-                    <Link to="/fields">رشته ها</Link>
+                    <Link to="/learning_process">فرایند آموزشی در پلتفرم</Link>
                   </li>
                   <li>
-                    <Link to="/courses">دوره ها</Link>
+                    <Link to="/internship">کارآموزی و افزایش مهارت</Link>
+                  </li>
+                  <li>
+                    <Link to="/labor" className="not-link-highlight">
+                      دروازه ای برای ورود به بازار کار
+                    </Link>
                   </li>
                 </ul>
               </div>

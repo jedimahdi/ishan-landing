@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Header from '../../components/homepage/header/header.component';
 import Image1Src from '../../assets/images/other/sabtenam.jpg';
 import Button from '../../shared/components/FormElements/Button';
+import EnrollModal from '../../components/enroll-modal/enroll-modal.component';
 import './enroll.styles.scss';
 
 const EnrollPage = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <React.Fragment>
+      <EnrollModal show={showModal} onCancel={() => setShowModal(false)} />
+
       <Header media={Image1Src} small breadcrump="نحوه پذیرش" />
+
       <section className="steps-section text-white">
         <div className="seprator"></div>
         <div className="container">
@@ -30,7 +36,9 @@ const EnrollPage = () => {
                 <p>
                   فرم درخواست دوره و یا رشته مورد نظر را به صورت آنلاین پر کنید
                 </p>
-                <Button inverse>فرم ثبت نام</Button>
+                <Button inverse onClick={() => setShowModal(true)}>
+                  فرم ثبت نام
+                </Button>
               </div>
 
               <div className="step-section">

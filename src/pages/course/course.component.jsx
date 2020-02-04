@@ -52,14 +52,15 @@ const CoursePage = () => {
           }
         );
 
-        const coursesList = await sendRequest(
-          `${SERVER_URL}field`,
-          'POST',
-          JSON.stringify({}),
-          {
-            'Content-Type': 'application/json'
-          }
-        );
+        // const coursesList = await sendRequest(
+        //   `${SERVER_URL}field`,
+        //   'POST',
+        //   JSON.stringify({}),
+        //   {
+        //     'Content-Type': 'application/json'
+        //   }
+        // );
+        const coursesList = await sendRequest(`${SERVER_URL}recCourse`);
 
         console.log(responseData);
         console.log(teacherData);
@@ -101,7 +102,7 @@ const CoursePage = () => {
         <div className="container">
           <div className="seprator"></div>
           <div className="row">
-            <Sidebar title="رشته ها">
+            <Sidebar title="لیست دوره‌ها">
               {listCourses.map(field => (
                 <li key={field._id}>
                   <Link to={`/field/${field._id}`}>{field.title}</Link>

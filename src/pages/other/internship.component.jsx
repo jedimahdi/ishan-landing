@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Header from '../../components/homepage/header/header.component';
-import Button from '../../shared/components/FormElements/Button';
 
 import Image1Src from '../../assets/images/other/KARVARZI.jpg';
 
 import './internship.styles.scss';
+import ButtonIcon from '../../shared/components/FormElements/ButtonIcon';
 
 const InternshipPage = () => {
   return (
@@ -21,10 +21,19 @@ const InternshipPage = () => {
                 <h4>لینک ها</h4>
                 <ul>
                   <li>
-                    <Link to="/fields">رشته ها</Link>
+                    <Link to="/learning_process">فرایند آموزشی در پلتفرم</Link>
                   </li>
                   <li>
-                    <Link to="/courses">دوره ها</Link>
+                    <Link
+                      to="/internship"
+                      disabled
+                      className="not-link-highlight"
+                    >
+                      کارآموزی و افزایش مهارت
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/labor">دروازه ای برای ورود به بازار کار</Link>
                   </li>
                 </ul>
               </div>
@@ -82,14 +91,8 @@ const InternshipPage = () => {
               </div>
 
               <div className="btn-wrapper">
-                <Button danger>
-                  <i className="fa fa-angle-left"></i>
-                  <span>با یک مشاور صحبت کنید</span>
-                </Button>
-                <Button danger>
-                  <i className="fa fa-angle-left"></i>
-                  <span> پذیرش و ثبت نام</span>
-                </Button>
+                <ButtonIcon>با یک مشاور صحبت کنید</ButtonIcon>
+                <ButtonIcon> پذیرش و ثبت نام</ButtonIcon>
               </div>
             </div>
           </div>

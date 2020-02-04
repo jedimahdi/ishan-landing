@@ -19,6 +19,7 @@
 .button:hover,
 .button:active {
   background: #fff;
+  text-decoration: none;
 }
 
 .button--inverse {

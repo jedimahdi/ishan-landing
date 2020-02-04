@@ -14,3 +14,8 @@ a {
   display: flex;
   justify-content: center;
 }
+
+.not-link-highlight {
+  color: #fff !important;
+  cursor: default;
+}
