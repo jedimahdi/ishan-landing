@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import SettingsProvider from './providers/settings/settings.provider';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {BrowserRouter} from 'react-router-dom'
+import SettingsProvider from './providers/settings/settings.provider'
 
-import './index.css';
-import App from './App';
+import './index.css'
+import App from './App'
 
 ReactDOM.render(
   <SettingsProvider>
@@ -12,5 +12,5 @@ ReactDOM.render(
       <App />
     </BrowserRouter>
   </SettingsProvider>,
-  document.getElementById('root')
-);
+  document.getElementById('root'),
+)

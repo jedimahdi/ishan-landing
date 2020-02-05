@@ -1,46 +1,45 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react'
 
-import Input from '../../shared/components/FormElements/Input';
-import Button from '../../shared/components/FormElements/Button';
-import Modal from '../../shared/components/UIElements/Modal';
-import { useForm } from '../../shared/hooks/form-hook';
-import {
-  VALIDATOR_REQUIRE,
-  VALIDATOR_MINLENGTH
-} from '../../shared/util/validators';
-import './request_form.styles.scss';
+import Input from '../../shared/components/FormElements/Input'
+import Button from '../../shared/components/FormElements/Button'
+import Modal from '../../shared/components/UIElements/Modal'
+import {useForm} from '../../shared/hooks/form-hook'
+import {VALIDATOR_REQUIRE} from '../../shared/util/validators'
+import './request_form.styles.scss'
 
 const RequestFormModal = props => {
   const [formState, inputHandler] = useForm(
     {
       name: {
         value: '',
-        isValid: false
+        isValid: false,
       },
       phone: {
         value: '',
-        isValid: false
+        isValid: false,
       },
       city: {
         value: '',
-        isValid: false
+        isValid: false,
       },
       address: {
         value: '',
-        isValid: true
+        isValid: true,
       },
       sex: {
         value: '',
-        isValid: false
+        isValid: false,
       },
       home_phone: {
         value: '',
-        isValid: false
-      }
+        isValid: false,
+      },
     },
-    false
-  );
-  const [secondStep, setSecondStep] = useState(false);
+    false,
+  )
+  const [secondStep, setSecondStep] = useState(false)
+
+  console.log(formState)
 
   return (
     <React.Fragment>
@@ -53,8 +52,8 @@ const RequestFormModal = props => {
             <Button
               // disabled={!formState.isValid}
               onClick={() => {
-                props.onCancel();
-                setSecondStep(true);
+                props.onCancel()
+                setSecondStep(true)
               }}
             >
               مرحله بعد
@@ -145,7 +144,7 @@ const RequestFormModal = props => {
           <div>
             <Button
               onClick={() => {
-                setSecondStep(false);
+                setSecondStep(false)
               }}
             >
               ثبت
@@ -192,7 +191,7 @@ const RequestFormModal = props => {
         <div className="seprator-lg"></div>
       </Modal>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default RequestFormModal;
+export default RequestFormModal

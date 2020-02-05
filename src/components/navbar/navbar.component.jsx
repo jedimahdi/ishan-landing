@@ -40,7 +40,7 @@ const Navbar = () => {
                 <span>{toPersianDigits(settingItems['contact_number'])}</span>
               </li>
               <li className="nav-item">
-                <Link to="/" className="academiclink">
+                <Link to="/calendar" className="academiclink">
                   <i className="fa fa-calendar" /> تقویم دوره ها
                 </Link>
               </li>

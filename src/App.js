@@ -28,6 +28,8 @@ import FeePage from './pages/other/fee.component';
 import EducationPage from './pages/other/education.component';
 import FaqPage from './pages/other/faq.component';
 import AcceleratorPage from './pages/other/accelerator.component';
+import CalendarPage from './pages/other/calendar.component';
+import NotFound from './pages/not-found/not-found.component';
 
 import FieldsPage from './pages/fields/fields.component';
 import FieldPage from './pages/field/field.component';
@@ -64,7 +66,7 @@ function App() {
     };
     fetchData();
     // setLoading(false);
-  }, []);
+  }, [setSettings]);
 
   if (isLoading) {
     return <div className="loading">Loading...</div>;
@@ -100,9 +102,11 @@ function App() {
           <Route path="/adviser-in-course" component={AdviserCourse} />
           <Route path="/support-and-services" component={SupportAndServices} />
           <Route path="/seminar" component={SeminarPage} />
+          <Route path="/calendar" component={CalendarPage} />
 
           <Route path="/fields" component={FieldsPage} />
           <Route path="/field/:field_id" component={FieldPage} />
+          <Route default component={NotFound} />
         </Switch>
         <Footer />
       </div>

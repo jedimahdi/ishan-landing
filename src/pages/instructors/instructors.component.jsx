@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom'
 
-import Header from '../../components/homepage/header/header.component';
-import Image1Src from '../../assets/images/teachers/techerssssss.jpg';
-import { SERVER_URL } from '../../shared/util/vars';
-import { useHttpClient } from '../../shared/hooks/http-hook';
-import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
-import './instructors.styles.scss';
+import Header from '../../components/homepage/header/header.component'
+import Image1Src from '../../assets/images/teachers/techerssssss.jpg'
+import {SERVER_URL} from '../../shared/util/vars'
+import {useHttpClient} from '../../shared/hooks/http-hook'
+import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner'
+import ErrorModal from '../../shared/components/UIElements/ErrorModal'
+import './instructors.styles.scss'
 
 const InstructorsPage = () => {
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
-  const [teachers, setTeachers] = useState();
+  const {isLoading, error, sendRequest, clearError} = useHttpClient()
+  const [teachers, setTeachers] = useState()
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -20,20 +21,21 @@ const InstructorsPage = () => {
           'POST',
           JSON.stringify({}),
           {
-            'Content-Type': 'application/json'
-          }
-        );
-        console.log(responseData);
-        setTeachers(responseData);
+            'Content-Type': 'application/json',
+          },
+        )
+        console.log(responseData)
+        setTeachers(responseData)
       } catch (err) {
-        console.log(err.message);
+        console.log(err.message)
       }
-    };
-    fetchCourses();
-  }, [sendRequest]);
+    }
+    fetchCourses()
+  }, [sendRequest])
 
   return (
     <React.Fragment>
+      <ErrorModal error={error} onClear={clearError} />
       <Header media={Image1Src} small breadcrump="اساتید" />
       {isLoading && (
         <div className="center">
@@ -72,7 +74,7 @@ const InstructorsPage = () => {
           <div className="container">
             <div className="row">
               {teachers.map(teacher => (
-                <div className="col-md-4 col-sm-6" key={teacher._id}>
+                <div className="col-lg-4 col-md-6 col-sm-6" key={teacher._id}>
                   <Link
                     to={`/instructors/${teacher._id}`}
                     className="content-block transparent"
@@ -104,7 +106,7 @@ const InstructorsPage = () => {
         </section>
       )}
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default InstructorsPage;
+export default InstructorsPage

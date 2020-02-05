@@ -91,8 +91,10 @@ const InternshipPage = () => {
               </div>
 
               <div className="btn-wrapper">
-                <ButtonIcon>با یک مشاور صحبت کنید</ButtonIcon>
-                <ButtonIcon> پذیرش و ثبت نام</ButtonIcon>
+                <ButtonIcon to="/speak-to-adviser">
+                  با یک مشاور صحبت کنید
+                </ButtonIcon>
+                <ButtonIcon to="/enroll"> پذیرش و ثبت نام</ButtonIcon>
               </div>
             </div>
           </div>

@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom'
 
-import Header from '../../components/homepage/header/header.component';
-import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
-import { useHttpClient } from '../../shared/hooks/http-hook';
-import { SERVER_URL } from '../../shared/util/vars';
-import Image1Src from '../../assets/images/reshtehaa.jpg';
+import Header from '../../components/homepage/header/header.component'
+import ErrorModal from '../../shared/components/UIElements/ErrorModal'
+import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner'
+import {useHttpClient} from '../../shared/hooks/http-hook'
+import {SERVER_URL} from '../../shared/util/vars'
+import Image1Src from '../../assets/images/reshtehaa.jpg'
 
-import './fields.styles.scss';
+import './fields.styles.scss'
 
 const FieldsPage = () => {
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
-  const [fields, setFields] = useState();
+  const {isLoading, error, sendRequest, clearError} = useHttpClient()
+  const [fields, setFields] = useState()
 
   useEffect(() => {
     const fetchFields = async () => {
@@ -21,20 +22,21 @@ const FieldsPage = () => {
           'POST',
           JSON.stringify({}),
           {
-            'Content-Type': 'application/json'
-          }
-        );
+            'Content-Type': 'application/json',
+          },
+        )
 
-        setFields(responseData);
+        setFields(responseData)
       } catch (err) {
-        console.log(err.message);
+        console.log(err.message)
       }
-    };
-    fetchFields();
-  }, [sendRequest]);
+    }
+    fetchFields()
+  }, [sendRequest])
 
   return (
     <React.Fragment>
+      <ErrorModal error={error} onClear={clearError} />
       <Header media={Image1Src} small breadcrump="رشته ها" />
       {isLoading && (
         <div className="center">
@@ -68,10 +70,10 @@ const FieldsPage = () => {
         </section>
       )}
     </React.Fragment>
-  );
-};
+  )
+}
 
-const Field = ({ field }) => {
+const Field = ({field}) => {
   return (
     <Link to={`/field/${field._id}`} className="field-link">
       <div className="field">
@@ -93,53 +95,7 @@ const Field = ({ field }) => {
         </div>
       </div>
     </Link>
-  );
-};
+  )
+}
 
-const FieldInfo = () => {
-  return (
-    <div className="col-md-3 field-info">
-      <h1>رشته اول</h1>
-      <p>
-        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-        از طراحان گرافیک است.
-      </p>
-      <Link to="/">
-        دیدن همه دوره ها <i className="fa fa-long-arrow-left"></i>
-      </Link>
-    </div>
-  );
-};
-
-const FieldCourses = () => {
-  return (
-    <div className="col-md-9">
-      <div className="row">
-        <FieldCourse />
-        <FieldCourse />
-        <FieldCourse />
-        <FieldCourse />
-      </div>
-    </div>
-  );
-};
-
-const FieldCourse = () => {
-  return (
-    <div className="col-md-6">
-      <div className="course">
-        <img
-          src="https://www.gnomon.edu/assets/courses/on-campus_vehicle-design-237bf8b8acb96ed3d3ddb976ebb13ff333833de644bdec3f6431101ff1477605.jpg"
-          alt="course"
-          className="img-responsive"
-        />
-        <div className="course-body">
-          <h3>مدلسازی Maya</h3>
-          <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از.</p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default FieldsPage;
+export default FieldsPage

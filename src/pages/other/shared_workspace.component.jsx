@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Header from '../../components/homepage/header/header.component';
 import Image1Src from '../../assets/images/other/eshteraki.jpg';
@@ -18,9 +19,34 @@ const SharedworkspacePage = () => {
       <section id="mentor" className=" text-white">
         <div className="seprator"></div>
         <div className="container">
-          <h2>فضای کار اشتراکی</h2>
           <div className="row">
-            <div className="col-md-12 ">
+            <div className="col-md-3 sidebar">
+              <div className="subsection">
+                <h4>خدمات</h4>
+                <ul>
+                  <li>
+                    <Link
+                      to="/shared_workspace"
+                      disabled
+                      className="not-link-highlight"
+                    >
+                      فضای کار اشتراکی
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/mentoring">خدمات منتورینگ</Link>
+                  </li>
+                  <li>
+                    <Link to="/accelerator">شتابدهی</Link>
+                  </li>
+                  <li>
+                    <Link to="/technical_services">خدمات فنی</Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-md-9">
+              <h2>فضای کار اشتراکی</h2>
               <p>
                 با توجه به توانایی ها و تجربه های ارزشمندی که در طول سال ها
                 فعالیت در زمینه انیمیشن، بازی و جلوه های ویژه بصری داشته است،

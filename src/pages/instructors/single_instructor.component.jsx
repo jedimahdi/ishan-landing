@@ -1,22 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useParams } from 'react-router';
+import React, {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom'
+import {useParams} from 'react-router'
 
-import Header from '../../components/homepage/header/header.component';
-import Image1Src from '../../assets/images/teachers/techerssssss.jpg';
-import { SERVER_URL } from '../../shared/util/vars';
-import { useHttpClient } from '../../shared/hooks/http-hook';
-import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
-import './single_instructor.styles.scss';
+import Header from '../../components/homepage/header/header.component'
+import Image1Src from '../../assets/images/teachers/techerssssss.jpg'
+import {SERVER_URL} from '../../shared/util/vars'
+import {useHttpClient} from '../../shared/hooks/http-hook'
+import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner'
+import ErrorModal from '../../shared/components/UIElements/ErrorModal'
+import './single_instructor.styles.scss'
 
 const SingleInstructorPage = () => {
-  const { instructor_id } = useParams();
+  const {instructor_id} = useParams()
   // const instructor = TEACHERS_DATA.find(
   //   teacher => teacher.name === instructor_name
   // );
 
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
-  const [instructor, setInstructor] = useState();
+  const {isLoading, error, sendRequest, clearError} = useHttpClient()
+  const [instructor, setInstructor] = useState()
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -24,22 +25,23 @@ const SingleInstructorPage = () => {
         const responseData = await sendRequest(
           `${SERVER_URL}teacher`,
           'POST',
-          JSON.stringify({ _id: instructor_id }),
+          JSON.stringify({_id: instructor_id}),
           {
-            'Content-Type': 'application/json'
-          }
-        );
-        console.log(responseData);
-        setInstructor(responseData);
+            'Content-Type': 'application/json',
+          },
+        )
+        console.log(responseData)
+        setInstructor(responseData)
       } catch (err) {
-        console.log(err.message);
+        console.log(err.message)
       }
-    };
-    fetchCourses();
-  }, [sendRequest, instructor_id]);
+    }
+    fetchCourses()
+  }, [sendRequest, instructor_id])
 
   return (
     <React.Fragment>
+      <ErrorModal error={error} onClear={clearError} />
       <Header
         media={Image1Src}
         small
@@ -97,7 +99,7 @@ const SingleInstructorPage = () => {
         </section>
       )}
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default SingleInstructorPage;
+export default SingleInstructorPage

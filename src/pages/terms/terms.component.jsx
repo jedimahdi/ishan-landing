@@ -64,17 +64,19 @@ const TermsPage = () => {
               </p>
             </div>
             <div className="col-md-3">
-              <p>
-                توجه : ثبت نام در هر دوره به منزله موافقت کامل با قوانین مجموعه
-                می باشد
-              </p>
+              <div className="black-box">
+                <p className="text-white">
+                  توجه : ثبت نام در هر دوره به منزله موافقت کامل با قوانین
+                  مجموعه می باشد
+                </p>
 
-              <p>
-                <Link to="/pdf/terms.pdf" target="_blank" download>
-                  <i className="fa fa-file-o"></i>
-                  <span> دانلود فایل PDF </span>
-                </Link>
-              </p>
+                <p>
+                  <Link to="/pdf/terms.pdf" target="_blank" download>
+                    <i className="fa fa-file-o"></i>
+                    <span> دانلود فایل PDF </span>
+                  </Link>
+                </p>
+              </div>
             </div>
           </div>
         </div>

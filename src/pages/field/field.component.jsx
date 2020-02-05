@@ -1,18 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import React, {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 
-import Header from '../../components/homepage/header/header.component';
-import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
-import { useHttpClient } from '../../shared/hooks/http-hook';
-import { SERVER_URL } from '../../shared/util/vars';
+import Header from '../../components/homepage/header/header.component'
+import ErrorModal from '../../shared/components/UIElements/ErrorModal'
+import FieldAgenda from '../../components/field-agenda/field-agenda.component'
+import {toPersianDigits} from '../../shared/util/helpers'
+import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner'
+import {useHttpClient} from '../../shared/hooks/http-hook'
+import {SERVER_URL} from '../../shared/util/vars'
 
-import './field.styles.scss';
+import './field.styles.scss'
 
 const FieldPage = () => {
-  const { field_id } = useParams();
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
-  const [field, setField] = useState();
+  const {field_id} = useParams()
+  const {isLoading, error, sendRequest, clearError} = useHttpClient()
+  const [field, setField] = useState()
+  const [events, setEvents] = useState()
+  // const [fieldList, setFieldList] = useState()
+
+  // const canvasRef = React.useRef();
+
+  // const drawCourses = () => {
+  //   const canvas = canvasRef.current;
+  //   let ctx = canvas.getContext('2d');
+  //   ctx.beginPath();
+  //   ctx.arc(95, 150, 40, 0, 2 * Math.PI);
+  //   ctx.stroke();
+  //   ctx.font = '10px Arial';
+  //   ctx.fillText('Hello World', 118, 153);
+  // };
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -20,131 +37,124 @@ const FieldPage = () => {
         const responseData = await sendRequest(
           `${SERVER_URL}field`,
           'POST',
-          JSON.stringify({ _id: field_id }),
+          JSON.stringify({_id: field_id}),
           {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+          },
+        )
+
+        const responseField = responseData[0]
+        setField(responseField)
+        console.log(responseField)
+
+        const eventData = responseField.clist.map(term => {
+          let max_inner_duration = 0
+
+          let children = term.course.map(course => {
+            const inner_duration = Object.keys(course.weeks)[
+              Object.keys(course.weeks).length - 1
+            ]
+
+            if (inner_duration > max_inner_duration) {
+              max_inner_duration = inner_duration
+            }
+
+            return {
+              title: course.title,
+              inner_duration: inner_duration,
+              point: toPersianDigits('65'),
+            }
+          })
+
+          return {
+            title: `ترم ${toPersianDigits(term.term)}`,
+            duration: max_inner_duration,
+            children: children,
           }
-        );
+        })
 
-        console.log(responseData);
-        setField(responseData[0]);
+        setEvents(eventData)
+
+        console.log(eventData)
       } catch (err) {
-        console.log(err.message);
+        console.log(err.message)
       }
-    };
-    fetchCourses();
-  }, [sendRequest, field_id]);
+    }
+    fetchCourses()
+
+    // context.beginPath();
+    // context.arc(50, 50, 50, 0, 2 * Math.PI);
+    // context.fill();
+  }, [sendRequest, field_id])
 
   return (
-    <div className="field-page text-right text-white">
-      <Header
-        media="a"
-        small
-        no_header
-        breadcrump={<Link to="/fields">رشته ها</Link>}
-      />
-      <div className="seprator" />
-      {isLoading && (
-        <div className="center">
-          <LoadingSpinner />
-        </div>
-      )}
-
-      {!isLoading && field && (
-        <section>
-          <div className="container">
-            <div className="field-title">
-              <h2>{field.title}</h2>
-              <p>{field.desc}</p>
-            </div>
-
-            <div className="field-courses">
-              <h3>دوره های رشته</h3>
-              <div className="row">
-                {field.clist.map((c, idx) => {
-                  let course = c.course;
-
-                  return (
-                    <div className="col-md-6" key={idx}>
-                      <Link
-                        to={`/course/${course._id}`}
-                        className="content-block transparent"
-                      >
-                        <div className="thumbnails">
-                          <div className="overlay" />
-                          <img
-                            className="img-responsive-full"
-                            src={`${SERVER_URL}${course.img}`}
-                            alt=""
-                          />
-                        </div>
-                        <div className="description">
-                          <h4>{course.title}</h4>
-                          {course.minidesc}
-                        </div>
-                      </Link>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+    <React.Fragment>
+      <ErrorModal error={error} onClear={clearError} />
+      <div className="field-page text-right text-white">
+        <Header
+          media="a"
+          small
+          no_header
+          breadcrump={<Link to="/fields">رشته ها</Link>}
+        />
+        <div className="seprator" />
+        {isLoading && (
+          <div className="center">
+            <LoadingSpinner />
           </div>
-        </section>
-      )}
-    </div>
-  );
-};
+        )}
 
-const Term = () => {
-  return (
-    <div className="term">
-      <div className="term-num">ترم اول</div>
-      <TermCourseList />
-    </div>
-  );
-};
+        {!isLoading && field && events && (
+          <section>
+            <div className="container">
+              <div className="field-title">
+                <h2>{field.title}</h2>
+                <p>{field.desc}</p>
+              </div>
 
-const TermCourseList = () => {
-  return (
-    <div className="row">
-      <TermCourse />
-      <TermCourse />
-      <TermCourse />
-      <TermCourse />
-    </div>
-  );
-};
+              <div className="field-canvas" style={{}}>
+                <FieldAgenda duration={field.duration} events={events} />
+              </div>
 
-const TermCourse = () => {
-  return (
-    <div className="col-md-6 ">
-      <div className="field-course">
-        <div className="course-image">
-          <img
-            src="https://www.gnomon.edu/assets/programs/foundation/classthumbs/psdfordp_foundation_class_thumbs-113d8c6ff7fedb01a477ec77f949887d57bed70c91b26ed75403279def37234a.jpg"
-            alt="course"
-            className="img-responsive"
-          />
-        </div>
-        <div className="course-info">
-          <h3>طراحی کاراکتر</h3>
-          <p>
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
-            ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
-            کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی
-            در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را
-            می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی
-            الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این
-            صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و
-            شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی
-            دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا
-            مورد استفاده قرار گیرد.
-          </p>
-        </div>
+              <div className="seprator-lg"></div>
+              {field.clist.map((c, idx) => {
+                let courseList = c.course
+
+                return (
+                  <div className="field-courses" key={idx}>
+                    <h3>ترم {c.term}</h3>
+                    <div className="row">
+                      {courseList.map((course, idx2) => (
+                        <div className="col-md-6" key={idx2}>
+                          <Link
+                            to={`/course/${course._id}`}
+                            className="content-block transparent"
+                          >
+                            <div className="thumbnails">
+                              <div className="overlay" />
+                              <img
+                                className="img-responsive-full"
+                                src={`${SERVER_URL}${course.img}`}
+                                alt=""
+                              />
+                            </div>
+                            <div className="description">
+                              <h4>{course.title}</h4>
+                              {course.minidesc}
+                            </div>
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </section>
+        )}
       </div>
-    </div>
-  );
-};
+    </React.Fragment>
+  )
+}
 
-export default FieldPage;
+export default FieldPage

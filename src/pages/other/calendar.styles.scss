@@ -1,0 +1,22 @@
+.calendar {
+  color: #898989;
+
+  thead {
+    color: white;
+    background-color: #252525;
+    padding: 10px 0;
+  }
+
+  th {
+    border: none !important;
+  }
+
+  td {
+    border-bottom: 1px solid #343434;
+    border-top: 0;
+  }
+
+  .calendar-course-title {
+    color: #fff;
+  }
+}

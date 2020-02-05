@@ -218,3 +218,12 @@
     height: 11vh !important;
   }
 }
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    display: none !important;
+    margin: 0;
+    flex-flow: row;
+    justify-content: flex-start !important;
+  }
+}

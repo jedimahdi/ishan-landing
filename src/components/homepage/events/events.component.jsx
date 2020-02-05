@@ -1,13 +1,9 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import {Link} from 'react-router-dom'
 
-import { SettingsContext } from '../../../providers/settings/settings.provider';
-
-import './events.styles.scss';
+import './events.styles.scss'
 
 const Events = () => {
-  const { settingItems } = useContext(SettingsContext);
-
   return (
     <section className="community-events text-right">
       <div className="seprator-lg" />
@@ -114,7 +110,7 @@ const Events = () => {
 
       <div className="seprator" />
     </section>
-  );
-};
+  )
+}
 
-export default Events;
+export default Events

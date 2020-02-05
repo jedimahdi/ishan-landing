@@ -1,29 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom'
 
-import Header from '../../components/homepage/header/header.component';
-import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
-import { useHttpClient } from '../../shared/hooks/http-hook';
-import { SERVER_URL } from '../../shared/util/vars';
-import './course_list.styles.scss';
+import Header from '../../components/homepage/header/header.component'
+import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner'
+import ErrorModal from '../../shared/components/UIElements/ErrorModal'
+import {useHttpClient} from '../../shared/hooks/http-hook'
+import {SERVER_URL} from '../../shared/util/vars'
+import './course_list.styles.scss'
 
 const CourseListPage = () => {
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
-  const [loadedCourses, setLoadedCourses] = useState();
+  const {isLoading, error, sendRequest, clearError} = useHttpClient()
+  const [loadedCourses, setLoadedCourses] = useState()
 
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const responseData = await sendRequest(`${SERVER_URL}recCourse`);
-        console.log(responseData);
-        setLoadedCourses(responseData);
+        const responseData = await sendRequest(`${SERVER_URL}recCourse`)
+        console.log(responseData)
+        setLoadedCourses(responseData)
       } catch (err) {}
-    };
-    fetchCourses();
-  }, [sendRequest]);
+    }
+    fetchCourses()
+  }, [sendRequest])
 
   return (
     <React.Fragment>
+      <ErrorModal error={error} onClear={clearError} />
       <Header media="s" small breadcrump="دوره ها" no_header={true} />
       {isLoading && (
         <div className="center">
@@ -51,8 +53,8 @@ const CourseListPage = () => {
         </div>
       )}
     </React.Fragment>
-  );
-};
+  )
+}
 
 const ListCourses = props => {
   return (
@@ -61,8 +63,8 @@ const ListCourses = props => {
         <Course course={course} key={course._id} />
       ))}
     </React.Fragment>
-  );
-};
+  )
+}
 
 const Course = props => {
   return (
@@ -81,6 +83,6 @@ const Course = props => {
         </div>
       </Link>
     </div>
-  );
-};
-export default CourseListPage;
+  )
+}
+export default CourseListPage

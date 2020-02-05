@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import ReactPlayer from 'react-player';
-import { Link } from 'react-router-dom';
+import React, {useState, useEffect} from 'react'
+import {useParams} from 'react-router-dom'
+import ReactPlayer from 'react-player'
+import {Link} from 'react-router-dom'
 
-import Header from '../../components/homepage/header/header.component';
-import Modal from '../../shared/components/UIElements/Modal';
-import Sidebar from '../../components/sidebar/sidebar.component';
-import RequestFormModal from './request_form.component';
-import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
-import { useHttpClient } from '../../shared/hooks/http-hook';
-import { SERVER_URL } from '../../shared/util/vars';
-import Button from '../../shared/components/FormElements/Button';
-import CourseSchedule from '../../components/course/course_schedule/course_schedule.component';
-import './course.styles.scss';
+import Header from '../../components/homepage/header/header.component'
+import Modal from '../../shared/components/UIElements/Modal'
+import Sidebar from '../../components/sidebar/sidebar.component'
+import RequestFormModal from './request_form.component'
+import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner'
+import ErrorModal from '../../shared/components/UIElements/ErrorModal'
+import {useHttpClient} from '../../shared/hooks/http-hook'
+import {SERVER_URL} from '../../shared/util/vars'
+import Button from '../../shared/components/FormElements/Button'
+import CourseSchedule from '../../components/course/course_schedule/course_schedule.component'
+import './course.styles.scss'
 // import CourseHeader from '../../components/course/course_header/course_header.component';
 // import CourseOverview from '../../components/course/course_overview/course_overview.component';
 // import CourseSpecs from '../../components/course/course_specs/course_specs.component';
@@ -23,13 +24,13 @@ import './course.styles.scss';
 // import CourseFaq from '../../components/course/course_faq/course_faq.component';
 
 const CoursePage = () => {
-  const { course_id } = useParams();
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
-  const [course, setCourse] = useState();
-  const [teacher, setTeacher] = useState();
-  const [listCourses, setListCourses] = useState();
-  const [formModal, setFormModal] = useState(false);
-  const [videoModal, setVideoModal] = useState(false);
+  const {course_id} = useParams()
+  const {isLoading, error, sendRequest, clearError} = useHttpClient()
+  const [course, setCourse] = useState()
+  const [teacher, setTeacher] = useState()
+  const [listCourses, setListCourses] = useState()
+  const [formModal, setFormModal] = useState(false)
+  const [videoModal, setVideoModal] = useState(false)
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -37,20 +38,20 @@ const CoursePage = () => {
         const responseData = await sendRequest(
           `${SERVER_URL}getCourseDetail`,
           'POST',
-          JSON.stringify({ _id: course_id }),
+          JSON.stringify({_id: course_id}),
           {
-            'Content-Type': 'application/json'
-          }
-        );
+            'Content-Type': 'application/json',
+          },
+        )
 
         const teacherData = await sendRequest(
           `${SERVER_URL}teacher`,
           'POST',
-          JSON.stringify({ _id: responseData.teacher }),
+          JSON.stringify({_id: responseData.teacher}),
           {
-            'Content-Type': 'application/json'
-          }
-        );
+            'Content-Type': 'application/json',
+          },
+        )
 
         // const coursesList = await sendRequest(
         //   `${SERVER_URL}field`,
@@ -60,23 +61,24 @@ const CoursePage = () => {
         //     'Content-Type': 'application/json'
         //   }
         // );
-        const coursesList = await sendRequest(`${SERVER_URL}recCourse`);
+        const coursesList = await sendRequest(`${SERVER_URL}recCourse`)
 
-        console.log(responseData);
-        console.log(teacherData);
-        console.log(coursesList);
-        setCourse(responseData);
-        setTeacher(teacherData);
-        setListCourses(coursesList);
+        console.log(responseData)
+        console.log(teacherData)
+        console.log(coursesList)
+        setCourse(responseData)
+        setTeacher(teacherData)
+        setListCourses(coursesList)
       } catch (err) {
-        console.log(err.message);
+        console.log(err.message)
       }
-    };
-    fetchCourses();
-  }, [sendRequest, course_id]);
+    }
+    fetchCourses()
+  }, [sendRequest, course_id])
 
   return (
     <React.Fragment>
+      <ErrorModal error={error} onClear={clearError} />
       <Header
         media="s"
         small
@@ -257,8 +259,8 @@ const CoursePage = () => {
 
       <div className="seprator-lg" />
     </React.Fragment>
-  );
-};
+  )
+}
 
 const VideoModal = props => {
   return (
@@ -274,7 +276,7 @@ const VideoModal = props => {
         />
       </div>
     </Modal>
-  );
-};
+  )
+}
 
-export default CoursePage;
+export default CoursePage
