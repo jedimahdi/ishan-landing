@@ -1,8 +1,9 @@
-import React from 'react';
+import React from 'react'
+import {Link} from 'react-router-dom'
 
-import Header from '../../components/homepage/header/header.component';
-import Image1Src from '../../assets/images/other/fani.jpg';
-import './custom-list.styles.scss';
+import Header from '../../components/homepage/header/header.component'
+import Image1Src from '../../assets/images/other/fani.jpg'
+import './custom-list.styles.scss'
 
 const TechServicesPage = () => {
   return (
@@ -11,9 +12,34 @@ const TechServicesPage = () => {
       <section id="tech" className=" text-white">
         <div className="seprator"></div>
         <div className="container">
-          <h2>فنی</h2>
           <div className="row">
-            <div className="col-md-12 ">
+            <div className="col-md-3 sidebar">
+              <div className="subsection">
+                <h4>خدمات</h4>
+                <ul>
+                  <li>
+                    <Link to="/shared_workspace">فضای کار اشتراکی</Link>
+                  </li>
+                  <li>
+                    <Link to="/mentoring">خدمات منتورینگ</Link>
+                  </li>
+                  <li>
+                    <Link to="/accelerator">شتابدهی</Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/technical_services"
+                      disabled
+                      className="not-link-highlight"
+                    >
+                      خدمات فنی
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-md-9">
+              <h2>فنی</h2>
               <p>
                 تمامی امکانات فنی و نوین شرکت رایمون مدیا زیر یک سقف و به بهترین
                 نحو در اختیار فعالان این حوزه قرار خواهد گرفت. برای استفاده از
@@ -80,7 +106,7 @@ const TechServicesPage = () => {
         <div className="seprator"></div>
       </section>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default TechServicesPage;
+export default TechServicesPage

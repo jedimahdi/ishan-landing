@@ -1,18 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import {Link} from 'react-router-dom'
 
-import Header from '../../components/homepage/header/header.component';
-import Image1Src from '../../assets/images/other/1.jpg';
-import Image2Src from '../../assets/images/other/021.jpg';
-import Image3Src from '../../assets/images/other/031.jpg';
-import Image4Src from '../../assets/images/other/05.jpg';
-import Button from '../../shared/components/FormElements/Button';
-import './education.styles.scss';
-import ButtonIcon from '../../shared/components/FormElements/ButtonIcon';
+import Header from '../../components/homepage/header/header.component'
+import Image1Src from '../../assets/images/other/1.jpg'
+import Image2Src from '../../assets/images/other/021.jpg'
+import Image3Src from '../../assets/images/other/031.jpg'
+import Image4Src from '../../assets/images/other/05.jpg'
+import Button from '../../shared/components/FormElements/Button'
+import ButtonIcon from '../../shared/components/FormElements/ButtonIcon'
+import EnrollModal from '../../components/enroll-modal/enroll-modal.component'
+import './education.styles.scss'
 
 const EducationPage = () => {
+  const [showModal, setShowModal] = React.useState(false)
+
   return (
     <React.Fragment>
+      <EnrollModal show={showModal} onCancel={() => setShowModal(false)} />
+
       <Header media={Image1Src} small breadcrump="مشاوره" />
       <section className="steps-section text-white">
         <div className="seprator"></div>
@@ -64,7 +69,7 @@ const EducationPage = () => {
         </div>
         <div className="seprator"></div>
       </section>
-      <section id="edu-basics" style={{ backgroundImage: `url(${Image3Src})` }}>
+      <section id="edu-basics" style={{backgroundImage: `url(${Image3Src})`}}>
         <div className="seprator-lg"></div>
         <div className="container">
           <div className="row">
@@ -91,7 +96,9 @@ const EducationPage = () => {
                 فرصتی برای ورود به دروازه هنرهای دیجیتالی ، بازیسازی و برنامه
                 نویسی
               </p>
-              <Button inverse>همین حالا مشاوره را شروع کنید</Button>
+              <Button inverse onClick={() => setShowModal(true)}>
+                همین حالا مشاوره را شروع کنید
+              </Button>
             </div>
           </div>
         </div>
@@ -99,7 +106,7 @@ const EducationPage = () => {
       </section>
       <section
         className="great-comment"
-        style={{ backgroundImage: `url(${Image4Src})` }}
+        style={{backgroundImage: `url(${Image4Src})`}}
       >
         <div className="seprator-lg"></div>
         <div className="seprator-lg"></div>
@@ -129,23 +136,25 @@ const EducationPage = () => {
 
           <div className="row steps-buttons">
             <div className="col-md-3">
-              <ButtonIcon>با یک مشاور صحبت کنید</ButtonIcon>
+              <ButtonIcon to="/speak-to-adviser">صحبت با یک مشاور</ButtonIcon>
             </div>
             <div className="col-md-3">
-              <ButtonIcon>خدمات فنی و پشتیبانی</ButtonIcon>
+              <ButtonIcon onClick={() => setShowModal(true)}>
+                درخواست دوره
+              </ButtonIcon>
             </div>
             <div className="col-md-3">
-              <ButtonIcon>شتابدهنده</ButtonIcon>
+              <ButtonIcon to="/internship">کارآموزی</ButtonIcon>
             </div>
             <div className="col-md-3">
-              <ButtonIcon>خدمات فنی و پشتیبانی</ButtonIcon>
+              <ButtonIcon to="/labor">اتصال به بازار کار</ButtonIcon>
             </div>
           </div>
         </div>
         <div className="seprator-lg"></div>
       </section>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default EducationPage;
+export default EducationPage

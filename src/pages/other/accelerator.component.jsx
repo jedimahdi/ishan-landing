@@ -1,43 +1,64 @@
-import React from 'react';
+import React from 'react'
+import {Link} from 'react-router-dom'
 
-import Header from '../../components/homepage/header/header.component';
-import Input from '../../shared/components/FormElements/Input';
-import Button from '../../shared/components/FormElements/Button';
-import { useForm } from '../../shared/hooks/form-hook';
-import {
-  VALIDATOR_REQUIRE,
-  VALIDATOR_EMAIL
-} from '../../shared/util/validators';
-import './accelerator.styles.scss';
+import Header from '../../components/homepage/header/header.component'
+import Input from '../../shared/components/FormElements/Input'
+import Button from '../../shared/components/FormElements/Button'
+import Select from '../../shared/components/FormElements/Select'
+import Image1Src from '../../assets/images/other/0258.jpg'
+import {useForm} from '../../shared/hooks/form-hook'
+import {VALIDATOR_REQUIRE, VALIDATOR_EMAIL} from '../../shared/util/validators'
+import './accelerator.styles.scss'
 
 const AcceleratorPage = () => {
   const [formState, inputHandler] = useForm(
     {
       email: {
         value: '',
-        isValid: false
-      }
+        isValid: false,
+      },
     },
-    false
-  );
+    false,
+  )
 
   const contactUsSubmitHandler = event => {
-    event.preventDefault();
-  };
+    event.preventDefault()
+  }
 
   return (
     <React.Fragment>
-      <Header
-        media="https://www.gnomon.edu/assets/static/bg-mailing-list-e1ab6419889d926a49278fc6d0bd4a6734a364847bf096861f791512428dbafa.jpg"
-        small
-        breadcrump="شتابدهنده"
-      />
+      <Header media={Image1Src} small breadcrump="شتابدهنده" />
       <section id="contact" className="text-white">
         <div className="seprator"></div>
         <div className="container">
-          <h2>شتابدهنده </h2>
           <div className="row">
-            <div className="col-md-7 contact-info">
+            <div className="col-md-3 sidebar">
+              <div className="subsection">
+                <h4>خدمات</h4>
+                <ul>
+                  <li>
+                    <Link to="/shared_workspace">فضای کار اشتراکی</Link>
+                  </li>
+                  <li>
+                    <Link to="/mentoring">خدمات منتورینگ</Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/accelerator"
+                      disabled
+                      className="not-link-highlight"
+                    >
+                      شتابدهی
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/technical_services">خدمات فنی</Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-md-5 ">
+              <h2>شتابدهنده </h2>
               <p>
                 شتابدهنده رایمون به صاحبان ایده ها کمک می کند تا بتوانند تعریفی
                 صحیح و نمونه اولیه مناسبی از کالا و یا خدماتی که قصد نوآوری در
@@ -78,7 +99,7 @@ const AcceleratorPage = () => {
               </p>
             </div>
 
-            <div className="col-md-5">
+            <div className="col-md-4">
               <form onSubmit={contactUsSubmitHandler}>
                 <div className="row">
                   <div className="col-md-6">
@@ -116,20 +137,13 @@ const AcceleratorPage = () => {
 
                 <div className="row">
                   <div className="col-md-6">
-                    <div className="form-input select-input-control">
-                      <label htmlFor="">چگونه با آیشن آشنا شده اید</label>
-                      <select
-                        name=""
-                        id=""
-                        className="form-control select-input"
-                      >
-                        <option value=""></option>
-                        <option value="">دوستان</option>
-                        <option value="">شبکه اجتماعی</option>
-                        <option value="">سایت</option>
-                        <option value="">دیگر</option>
-                      </select>
-                    </div>
+                    <Select label="نحوه آشنایی با آیشن" id="intro">
+                      <option value=""></option>
+                      <option value="">دوستان</option>
+                      <option value="">شبکه اجتماعی</option>
+                      <option value="">سایت</option>
+                      <option value="">دیگر</option>
+                    </Select>
                   </div>
                   <div className="col-md-6">
                     <Input
@@ -156,7 +170,7 @@ const AcceleratorPage = () => {
         <div className="seprator-lg"></div>
       </section>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default AcceleratorPage;
+export default AcceleratorPage

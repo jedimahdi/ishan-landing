@@ -1,9 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-import Header from '../../components/homepage/header/header.component';
-import Image1Src from '../../assets/images/other/faqq.jpg';
-import FAQ_DATA from './faq.json';
-import './enroll.styles.scss';
+import Header from '../../components/homepage/header/header.component'
+import Image1Src from '../../assets/images/other/faqq.jpg'
+import FAQ_DATA from './faq.json'
+import './enroll.styles.scss'
+import './faq.styles.scss'
 
 const FaqPage = () => {
   return (
@@ -19,8 +20,6 @@ const FaqPage = () => {
           <div className="row">
             <div className="col-md-12 ">
               <div className="step-section">
-                <h4>سوالات عمومی</h4>
-
                 {FAQ_DATA.map((faq, idx) => (
                   <div className="question" key={idx}>
                     <h5>{faq.question}</h5>
@@ -34,7 +33,7 @@ const FaqPage = () => {
         <div className="seprator"></div>
       </section>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default FaqPage;
+export default FaqPage

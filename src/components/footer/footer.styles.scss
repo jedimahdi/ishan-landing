@@ -47,7 +47,7 @@ footer .mailing-list i.fa {
 
 footer .row a {
   color: #464646;
-  text-decoration: underline;
+  // text-decoration: underline;
 }
 
 footer .row a:hover,
@@ -81,5 +81,43 @@ footer .row.company-info {
   }
   footer .row.company-info > div {
     margin-bottom: 20px;
+  }
+}
+
+footer .mailing-list {
+  .mailing-list-row {
+    display: flex;
+    .rss {
+      margin-left: 13px;
+    }
+  }
+  .form-input {
+    margin: 0;
+    width: 320px;
+
+    input {
+      padding-top: 2px;
+      padding-bottom: 2px;
+      padding-right: 10px;
+      padding-left: 10px;
+      background-color: #000;
+    }
+  }
+
+  button {
+    border: 0;
+    outline: 0;
+    background-color: #222;
+    color: #fff;
+    font-size: 12px;
+    padding: 3px 14px;
+  }
+}
+
+footer .empower {
+  i {
+    margin-right: 5px;
+    position: relative;
+    top: 1px;
   }
 }

@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import {Link} from 'react-router-dom'
 
-import Header from '../../components/homepage/header/header.component';
-import Image1Src from '../../assets/images/other/mentoring.jpg';
-import './custom-list.styles.scss';
+import Header from '../../components/homepage/header/header.component'
+import Image1Src from '../../assets/images/other/mentoring.jpg'
+import './custom-list.styles.scss'
 
 const MentorPage = () => {
   return (
@@ -18,16 +18,16 @@ const MentorPage = () => {
                 <h4>خدمات</h4>
                 <ul>
                   <li>
+                    <Link to="/shared_workspace">فضای کار اشتراکی</Link>
+                  </li>
+                  <li>
                     <Link
-                      to="/shared_workspace"
+                      to="/mentoring"
                       disabled
                       className="not-link-highlight"
                     >
-                      فضای کار اشتراکی
+                      خدمات منتورینگ
                     </Link>
-                  </li>
-                  <li>
-                    <Link to="/mentoring">خدمات منتورینگ</Link>
                   </li>
                   <li>
                     <Link to="/accelerator">شتابدهی</Link>
@@ -68,7 +68,7 @@ const MentorPage = () => {
         <div className="seprator"></div>
       </section>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default MentorPage;
+export default MentorPage

@@ -3,6 +3,7 @@ import OwlCarousel from 'react-owl-carousel2'
 
 import API from '../../../utils/api'
 import {API_BASE_URL} from '../../../shared/util/vars'
+import Image1Src from '../../../assets/images/other/comments.jpg'
 // import { Link } from 'react-router-dom';
 
 import {SettingsContext} from '../../../providers/settings/settings.provider'
@@ -59,7 +60,7 @@ const Comments = () => {
       <section
         className="juangil"
         style={{
-          backgroundImage: `url(${settingItems['homepage_comments_bg_image']})`,
+          backgroundImage: `url(${Image1Src})`,
         }}
       >
         <div className="container">

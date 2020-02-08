@@ -1,16 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import {Link} from 'react-router-dom'
 
-import Header from '../../components/homepage/header/header.component';
-import Image1Src from '../../assets/images/other/eshteraki.jpg';
-import Image2Src from '../../assets/images/other/ajax-110x110.png';
-import Image3Src from '../../assets/images/other/closet-110x110.png';
-import Image4Src from '../../assets/images/other/wifi-110x110.png';
-import Image5Src from '../../assets/images/other/restaurant-110x110.png';
-import Image6Src from '../../assets/images/other/coffee-cup-110x110.png';
-import Image7Src from '../../assets/images/other/coworking-150x150.png';
-import './custom-list.styles.scss';
-import './shared_workspace.styles.scss';
+import Header from '../../components/homepage/header/header.component'
+import Image1Src from '../../assets/images/other/eshteraki.jpg'
+import Image2Src from '../../assets/images/other/ajax-110x110.png'
+import Image3Src from '../../assets/images/other/closet-110x110.png'
+import Image4Src from '../../assets/images/other/wifi-110x110.png'
+import Image5Src from '../../assets/images/other/restaurant-110x110.png'
+import Image6Src from '../../assets/images/other/coffee-cup-110x110.png'
+import Image7Src from '../../assets/images/other/coworking-150x150.png'
+import './custom-list.styles.scss'
+import './shared_workspace.styles.scss'
 
 const SharedworkspacePage = () => {
   return (
@@ -47,21 +47,26 @@ const SharedworkspacePage = () => {
             </div>
             <div className="col-md-9">
               <h2>فضای کار اشتراکی</h2>
-              <p>
-                با توجه به توانایی ها و تجربه های ارزشمندی که در طول سال ها
-                فعالیت در زمینه انیمیشن، بازی و جلوه های ویژه بصری داشته است،
-                پتانسیل بالایی جهت مشاوره و حمایت فکری برای فعالان این صنعت
-                دارد. برخی از انواع مشاوره قابل ارایه در مجموعه رایمون مدیا به
-                شرح زیر است:
-              </p>
-
-              <div className="logos d-flex justify-content-between align-items-center">
-                <img src={Image2Src} alt="icon" />
-                <img src={Image3Src} alt="icon" />
-                <img src={Image4Src} alt="icon" />
-                <img src={Image5Src} alt="icon" />
-                <img src={Image6Src} alt="icon" />
-                <img src={Image7Src} alt="icon" />
+              <div className="row">
+                <div className="col-md-7">
+                  <p>
+                    با توجه به توانایی ها و تجربه های ارزشمندی که در طول سال ها
+                    فعالیت در زمینه انیمیشن، بازی و جلوه های ویژه بصری داشته
+                    است، پتانسیل بالایی جهت مشاوره و حمایت فکری برای فعالان این
+                    صنعت دارد. برخی از انواع مشاوره قابل ارایه در مجموعه رایمون
+                    مدیا به شرح زیر است:
+                  </p>
+                </div>
+                <div className="col-md-5">
+                  <div className="logos d-flex justify-content-between align-items-center">
+                    <img src={Image2Src} alt="icon" />
+                    <img src={Image3Src} alt="icon" />
+                    <img src={Image4Src} alt="icon" />
+                    <img src={Image5Src} alt="icon" />
+                    <img src={Image6Src} alt="icon" />
+                    <img src={Image7Src} alt="icon" />
+                  </div>
+                </div>
               </div>
 
               <h6>فضای کار اشتراکی چیست؟</h6>
@@ -140,7 +145,7 @@ const SharedworkspacePage = () => {
         <div className="seprator"></div>
       </section>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default SharedworkspacePage;
+export default SharedworkspacePage

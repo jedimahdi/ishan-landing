@@ -42,7 +42,10 @@ const CourseListPage = () => {
               <div className="course-list">
                 <div className="row">
                   <div className="col-md-4">
-                    <h2>لیست دوره ها</h2>
+                    <h2>لیست دوره های</h2>
+                    <h3>هنرهای دیجیتالی</h3>
+                    <h3>بازیسازی</h3>
+                    <h3>برنامه نویسی</h3>
                   </div>
                   <ListCourses courses={loadedCourses} />
                 </div>

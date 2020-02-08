@@ -1,37 +1,31 @@
-import React from 'react';
+import React from 'react'
 
-import Header from '../../components/homepage/header/header.component';
-import Input from '../../shared/components/FormElements/Input';
-import Button from '../../shared/components/FormElements/Button';
-import { useForm } from '../../shared/hooks/form-hook';
-import {
-  VALIDATOR_REQUIRE,
-  VALIDATOR_EMAIL
-} from '../../shared/util/validators';
-import './contact.styles.scss';
+import Header from '../../components/homepage/header/header.component'
+import Input from '../../shared/components/FormElements/Input'
+import Button from '../../shared/components/FormElements/Button'
+import Image1Src from '../../assets/images/other/tamasbama.jpg'
+import {useForm} from '../../shared/hooks/form-hook'
+import {VALIDATOR_REQUIRE, VALIDATOR_EMAIL} from '../../shared/util/validators'
+import './contact.styles.scss'
 
 const ContactPage = () => {
   const [formState, inputHandler] = useForm(
     {
       email: {
         value: '',
-        isValid: false
-      }
+        isValid: false,
+      },
     },
-    false
-  );
+    false,
+  )
 
   const contactUsSubmitHandler = event => {
-    event.preventDefault();
-  };
+    event.preventDefault()
+  }
 
   return (
     <React.Fragment>
-      <Header
-        media="https://www.gnomon.edu/assets/static/bg-mailing-list-e1ab6419889d926a49278fc6d0bd4a6734a364847bf096861f791512428dbafa.jpg"
-        small
-        breadcrump="تماس با ما"
-      />
+      <Header media={Image1Src} small breadcrump="تماس با ما" />
       <section id="contact" className="text-right text-white">
         <div className="seprator"></div>
         <div className="container">
@@ -115,7 +109,7 @@ const ContactPage = () => {
         <div className="seprator-lg"></div>
       </section>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default ContactPage;
+export default ContactPage

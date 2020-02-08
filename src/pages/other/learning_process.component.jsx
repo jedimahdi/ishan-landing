@@ -1,11 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import {Link} from 'react-router-dom'
 
-import Header from '../../components/homepage/header/header.component';
-import Button from '../../shared/components/FormElements/Button';
-import { toPersianDigits } from '../../shared/util/helpers';
-import Image1Src from '../../assets/images/other/FARAHANI.jpg';
-import './learning_process.styles.scss';
+import Header from '../../components/homepage/header/header.component'
+import Button from '../../shared/components/FormElements/Button'
+import {toPersianDigits} from '../../shared/util/helpers'
+import Image1Src from '../../assets/images/other/farayand.jpg'
+import './learning_process.styles.scss'
 
 const LearningProcessPage = () => {
   return (
@@ -181,7 +181,7 @@ const LearningProcessPage = () => {
         <div className="seprator"></div>
       </section>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default LearningProcessPage;
+export default LearningProcessPage

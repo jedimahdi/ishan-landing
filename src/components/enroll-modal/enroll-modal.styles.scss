@@ -1,0 +1,26 @@
+.enroll-modal {
+  font-size: 20px;
+  .social-icons {
+    align-items: center;
+    a {
+      font-size: 32px;
+      margin: 10px;
+      position: relative;
+      top: 5px;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+  .button {
+    width: 100%;
+    text-align: center;
+    margin-right: 0;
+  }
+}
+
+.enroll-modal-content {
+  padding-left: 25px;
+  padding-right: 25px;
+}

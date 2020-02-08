@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import {Link} from 'react-router-dom'
+import ReactDOM from 'react-dom'
 
-import Image1Src from '../../../assets/images/header/ertebatbama.jpg';
-import Image2Src from '../../../assets/images/header/ghavanin.jpg';
-import Image3Src from '../../../assets/images/header/asatid.png';
+import Image1Src from '../../../assets/images/header/ertebatbama.jpg'
+import Image2Src from '../../../assets/images/header/ghavanin.jpg'
+import Image3Src from '../../../assets/images/other/asatid.jpg'
 
 const AboutOverlay = props => {
   const content = (
@@ -70,9 +70,9 @@ const AboutOverlay = props => {
         </Link>
       </div>
     </div>
-  );
+  )
 
-  return ReactDOM.createPortal(content, document.getElementById('modal-hook'));
-};
+  return ReactDOM.createPortal(content, document.getElementById('modal-hook'))
+}
 
-export default AboutOverlay;
+export default AboutOverlay
