@@ -13,3 +13,24 @@ select:focus {
   border: 1px solid #252525 !important;
   color: #fff !important;
 }
+
+.select-input-control label {
+  color: #fff;
+}
+
+.select-large .select-input {
+  padding: 15px 15px;
+  font-size: 22px;
+  background-color: #898989;
+}
+
+.select-large select.select-input:focus {
+  background-color: #898989 !important;
+}
+/* .select-large .select-input option {
+  background-color: #111 !important;
+}
+.select-large .select-input:hover option {
+  background-color: #898989 !important;
+  box-shadow: 0 0 10px 100px #1882a8 inset !important;
+} */

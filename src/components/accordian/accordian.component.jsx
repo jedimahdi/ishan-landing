@@ -1,6 +1,7 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 
+import {toPersianDigits} from '../../shared/util/helpers'
 import './accordian.styles.scss';
 
 const Accordian = props => {
@@ -26,7 +27,6 @@ const Accordian = props => {
 
     nitems.push(innerArray);
   }
-  console.log(nitems);
 
   return (
     <section id="course-schedule" className="my-accordian">
@@ -56,7 +56,7 @@ const Accordian = props => {
                 aria-controls={`collapse${item[0].week}`}
               >
                 <div>
-                  <p className="mb-0">هفته {item[0].week}</p>
+                  <p className="mb-0">هفته {toPersianDigits(item[0].week)}</p>
                   <h2 className="mb-0">{item[0].title}</h2>
                 </div>
                 <div>

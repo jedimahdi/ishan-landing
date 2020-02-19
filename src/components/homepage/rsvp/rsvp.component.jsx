@@ -24,7 +24,7 @@ const Rsvp = () => {
           <div className="seprator" />
           <div className="seprator" />
           <Link
-            to={settingItems['homepage_tour_link_url']}
+            to='/seminar'
             className="btn btn-primary"
           >
             {settingItems['homepage_tour_link_name']}{' '}

@@ -122,7 +122,7 @@ const FieldPage = () => {
 
                 return (
                   <div className="field-courses" key={idx}>
-                    <h3>ترم {c.term}</h3>
+                    <h3>ترم {toPersianDigits(c.term)}</h3>
                     <div className="row">
                       {courseList.map((course, idx2) => (
                         <div className="col-md-6" key={idx2}>

@@ -43,10 +43,22 @@ const FieldAgenda = props => {
   //   }
   // }, 0)
 
+  const agendaRef = React.useRef(null)
+
+  const scrollToTerm = term => {
+    window.scrollTo({
+      top:
+        term * 415 +
+        (agendaRef.current.offsetTop + agendaRef.current.offsetHeight + 25),
+      behavior: 'smooth',
+    })
+  }
+
   return (
     <React.Fragment>
       <div
         className="agenda"
+        ref={agendaRef}
         // style={{height: `${max_children_count * 85 + 120}px`}}
       >
         <div className="terms">
@@ -60,7 +72,11 @@ const FieldAgenda = props => {
               <div className="term-number">{event.title}</div>
               <div className="boxes">
                 {event.children.map((course, idx2) => (
-                  <div className="box-center" key={idx2}>
+                  <div
+                    className="box-center"
+                    key={idx2}
+                    onClick={() => scrollToTerm(idx)}
+                  >
                     <div
                       className="box"
                       style={{

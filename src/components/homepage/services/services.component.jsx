@@ -40,41 +40,45 @@ const Services = () => {
         <div className="row">
           <div className="col-md-3">
             <Link
-              to={settingItems['homepage_services_first_link']}
+              to='/accelerator'
               className="next-step-action"
             >
               <div className="text">
-                {settingItems['homepage_services_first_name']}
+                {/* {settingItems['homepage_services_first_name']} */}
+                شتابدهی
               </div>
             </Link>
           </div>
           <div className="col-md-3">
             <Link
-              to={settingItems['homepage_services_second_link']}
+              to='/shared_workspace'
               className="next-step-action"
             >
               <div className="text">
-                {settingItems['homepage_services_second_name']}
+                {/* {settingItems['homepage_services_second_name']} */}
+                فضای کار اشتراکی
               </div>
             </Link>
           </div>
           <div className="col-md-3">
             <Link
-              to={settingItems['homepage_services_third_link']}
+              to='/adviser-in-course'
               className="next-step-action"
             >
               <div className="text">
-                {settingItems['homepage_services_third_name']}
+                {/* {settingItems['homepage_services_third_name']} */}
+                جهت مشاوره حضوری
               </div>
             </Link>
           </div>
           <div className="col-md-3">
             <Link
-              to={settingItems['homepage_services_fourth_link']}
+              to='/speak-to-adviser'
               className="next-step-action"
             >
               <div className="text">
-                {settingItems['homepage_services_fourth_name']}
+                {/* {settingItems['homepage_services_fourth_name']} */}
+                با یک مشاور صحبت کنید
               </div>
             </Link>
           </div>

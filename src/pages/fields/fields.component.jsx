@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import Header from '../../components/homepage/header/header.component'
 import ErrorModal from '../../shared/components/UIElements/ErrorModal'
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner'
+import {toPersianDigits} from '../../shared/util/helpers'
 import {useHttpClient} from '../../shared/hooks/http-hook'
 import {SERVER_URL} from '../../shared/util/vars'
 import Image1Src from '../../assets/images/reshtehaa.jpg'
@@ -78,7 +79,8 @@ const Field = ({field}) => {
     <Link to={`/field/${field._id}`} className="field-link">
       <div className="field">
         <div className="field-time">
-          <span className="my-green">—</span> {field.duration} هفته
+          <span className="my-green">—</span> {toPersianDigits(field.duration)}{' '}
+          هفته
         </div>
         <div className="row">
           <div className="col-md-5">

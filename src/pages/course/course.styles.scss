@@ -1,14 +1,14 @@
 .course-details {
+  h2 {
+    color: #fff;
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
   .course-image {
     margin-bottom: 30px;
   }
   .course-title {
     margin-bottom: 30px;
-    h2 {
-      color: #fff;
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
     small {
       color: #898989;
       font-size: 18px;
@@ -20,8 +20,20 @@
     list-style: none;
     padding: 0;
 
+    li {
+      padding-bottom: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #333;
+
+      &:first-child {
+        border: 0;
+        padding-top: 0;
+      }
+    }
+
     span {
       color: #898988;
+      font-size: 14px;
     }
   }
 }

@@ -39,7 +39,7 @@ const RequestFormModal = props => {
   )
   const [secondStep, setSecondStep] = useState(false)
 
-  console.log(formState)
+  // console.log(formState)
 
   return (
     <React.Fragment>

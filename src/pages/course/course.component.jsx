@@ -11,6 +11,7 @@ import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner'
 import ErrorModal from '../../shared/components/UIElements/ErrorModal'
 import {useHttpClient} from '../../shared/hooks/http-hook'
 import {SERVER_URL} from '../../shared/util/vars'
+import {toPersianDigits} from '../../shared/util/helpers'
 import Button from '../../shared/components/FormElements/Button'
 import CourseSchedule from '../../components/course/course_schedule/course_schedule.component'
 import './course.styles.scss'
@@ -107,7 +108,7 @@ const CoursePage = () => {
             <Sidebar title="لیست دوره‌ها">
               {listCourses.map(field => (
                 <li key={field._id}>
-                  <Link to={`/field/${field._id}`}>{field.title}</Link>
+                  <Link to={`/course/${field._id}`}>{field.title}</Link>
                 </li>
               ))}
             </Sidebar>
@@ -121,22 +122,53 @@ const CoursePage = () => {
                   />
                 </div>
 
-                <div className="course-title">
-                  <h2>{course.title}</h2>
-                  <small>{course.minidesc}</small>
-                </div>
+                <h2>{course.title}</h2>
                 <div className="row">
                   <div className="col-md-8">
+                    <div className="course-title">
+                      <small>{course.minidesc}</small>
+                    </div>
                     <p>{course.desc}</p>
                   </div>
                   <div className="col-md-4">
                     <ul className="course-pres">
                       <li>
-                        قیمت دوره: <span>{course.price} تومان</span>
+                        قیمت دوره:{' '}
+                        <span>{toPersianDigits(course.price)} تومان</span>
                       </li>
                       <li>
                         طول دوره:
-                        <span> {Object.keys(course.weeks).pop()} هفته</span>
+                        <span>
+                          {' '}
+                          {toPersianDigits(
+                            Object.keys(course.weeks).pop(),
+                          )}{' '}
+                          هفته
+                        </span>
+                      </li>
+                      <li>
+                        نرم افزارهای مورد نیاز:
+                        <span> python, pycharm</span>
+                      </li>
+                      <li>
+                        پیش نیاز:
+                        <span>
+                          {' '}
+                          دوره پایتون، آشنایی با css, html, آشنایی با مفاهیم شی
+                          گرایی
+                        </span>
+                      </li>
+                      <li>
+                        هم نیاز:
+                        <span> git basic</span>
+                      </li>
+                      <li>
+                        تعداد جلسات حضوری:
+                        <span> ۲</span>
+                      </li>
+                      <li>
+                        مدرک:
+                        <span> خواجه نصرالدین طوسی</span>
                       </li>
                     </ul>
                   </div>
@@ -205,8 +237,7 @@ const CoursePage = () => {
                       aria-controls={`collapseTest`}
                     >
                       <div>
-                        <p className="mb-0">تست</p>
-                        <h2 className="mb-0">عنوان</h2>
+                        <h2 className="mb-0">مخاطبین دوره</h2>
                       </div>
                       <div>
                         <i className="fa toggle-accordian-icon" />

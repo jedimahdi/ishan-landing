@@ -15,7 +15,7 @@ const EnrollModal = props => {
       contentClass="enroll-modal-content"
     >
       <div className="enroll-modal">
-        <p>
+        <div>
           برای ثبت نام و رزرو دوره ، ابتدا به صفحه دوره و یا رشته مورد نظر رفته
           و پس از مطالعه دقیق توضیحات و رعایت هم نیاز و پیشنیاز، در صفحه مورد
           نظر فرم درخواست را پرکرده تا کارشناسان ما با شما ارتباط خواهند گرفت .
@@ -47,7 +47,7 @@ const EnrollModal = props => {
               </Button>
             </div>
           </div>
-        </p>
+        </div>
       </div>
     </Modal>
   )
