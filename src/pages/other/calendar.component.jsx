@@ -7,6 +7,7 @@ import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner'
 import ErrorModal from '../../shared/components/UIElements/ErrorModal'
 import {useHttpClient} from '../../shared/hooks/http-hook'
 import {SERVER_URL} from '../../shared/util/vars'
+import {toPersianDigits} from '../../shared/util/helpers'
 import './calendar.styles.scss'
 
 const CalendarPage = () => {
@@ -45,6 +46,7 @@ const CalendarPage = () => {
               <thead>
                 <tr>
                   <th>دوره</th>
+                  <th>قیمت</th>
                   <th>استاد</th>
                   <th>روز</th>
                   <th>زمان</th>
@@ -58,7 +60,9 @@ const CalendarPage = () => {
                       <div className="calendar-course-title">
                         {course.title}
                       </div>
-                      <div>{course.price}</div>
+                    </td>
+                    <td>
+                      <div>{toPersianDigits(course.price)}</div>
                     </td>
                     <TeacherItem teacher_id={course.teacher} />
                     <td></td>

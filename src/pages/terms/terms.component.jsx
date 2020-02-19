@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import {Link} from 'react-router-dom'
 
-import Header from '../../components/homepage/header/header.component';
-import Image1Src from '../../assets/images/terms/GHAVANINHA.jpg';
+import Header from '../../components/homepage/header/header.component'
+import Image1Src from '../../assets/images/terms/GHAVANINHA.jpg'
 
 const TermsPage = () => {
   return (
@@ -47,7 +47,7 @@ const TermsPage = () => {
                 غیر اینصورت امکان حضور در دوره وجود ندارد.
               </p>
               <p>شرط موفقيت در دوره و دريافت گواهينامه</p>
-              <p>* شرط موفقيت در هر دوره، كسب حداقل نمره 75 از 100 مي‌باشد.</p>
+              <p>* شرط موفقيت در هر دوره، كسب حداقل نمره ۷۵ از ۱۰۰ مي‌باشد.</p>
               <p>
                 * دانش‌پذيران محترم مي‌توانند پس‌از اتمام دوره و احراز نمره
                 قبولي جهت صدور گواهينامه پايان‌دوره از طریق پنل درخواست خود را
@@ -83,7 +83,7 @@ const TermsPage = () => {
         <div className="seprator"></div>
       </section>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default TermsPage;
+export default TermsPage

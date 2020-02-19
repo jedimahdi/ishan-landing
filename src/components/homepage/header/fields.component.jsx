@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom'
 import LoadingSpinner from '../../../shared/components/UIElements/LoadingSpinner'
 import ErrorModal from '../../../shared/components/UIElements/ErrorModal'
 import {useHttpClient} from '../../../shared/hooks/http-hook'
+import {toPersianDigits} from '../../../shared/util/helpers'
 import {SERVER_URL} from '../../../shared/util/vars'
 
 const FieldsOverlay = props => {
@@ -59,7 +60,7 @@ const FieldsOverlay = props => {
                         alt={field.title}
                       />
                       <h3>{field.title}</h3>
-                      <h5> {field.duration} هفته</h5>
+                      <h5> {toPersianDigits(field.duration)} هفته</h5>
                       <p>{field.desc}</p>
                     </Link>
                   </div>

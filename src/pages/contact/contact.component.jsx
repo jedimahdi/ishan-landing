@@ -6,6 +6,7 @@ import Button from '../../shared/components/FormElements/Button'
 import Image1Src from '../../assets/images/other/tamasbama.jpg'
 import {useForm} from '../../shared/hooks/form-hook'
 import {VALIDATOR_REQUIRE, VALIDATOR_EMAIL} from '../../shared/util/validators'
+import {toPersianDigits} from '../../shared/util/helpers'
 import './contact.styles.scss'
 
 const ContactPage = () => {
@@ -33,13 +34,15 @@ const ContactPage = () => {
           <div className="row">
             <div className="col-md-5 contact-info">
               <p>
-                تهران - ستارخان - نرسیده به توحید - کوچه لادن - پلاک 20 واحد 1
+                تهران - ستارخان - نرسیده به توحید - کوچه لادن - پلاک ۲۰ واحد ۱
               </p>
               <p>
-                کد پستی: 1441683154 | شماره تماس : 02166925724 - 09032344166
+                کد پستی: {toPersianDigits(1441683154)} | شماره تماس :{' '}
+                {toPersianDigits('02166925724')} -{' '}
+                {toPersianDigits('09032344166')}
               </p>
               <p>
-                ساعت کاری واحد اداری و پشتیبانی : 9 صبح تا 5 بعد از ظهر ( شنبه
+                ساعت کاری واحد اداری و پشتیبانی : ۹ صبح تا ۵ بعد از ظهر ( شنبه
                 تا پنجشنبه )
               </p>
             </div>
