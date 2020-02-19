@@ -1,13 +1,15 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import ReactPlayer from 'react-player';
+import React, {useContext} from 'react'
+import {Link} from 'react-router-dom'
+import ReactPlayer from 'react-player'
 
-import { SettingsContext } from '../../../providers/settings/settings.provider';
+import {SettingsContext} from '../../../providers/settings/settings.provider'
+import VideoUrl from '../../../assets/images/B-Roll.mp4'
+import ImageUrl from '../../../assets/images/art2.png'
 
-import './videorow.styles.scss';
+import './videorow.styles.scss'
 
 const Videorow = () => {
-  const { settingItems } = useContext(SettingsContext);
+  const {settingItems} = useContext(SettingsContext)
 
   return (
     <section className="home_videorow">
@@ -26,11 +28,12 @@ const Videorow = () => {
             <div className="seprator" />
 
             <ReactPlayer
-              url={settingItems['homepage_introduction_video']}
+              url={VideoUrl}
               width="100%"
-              height="500px"
+              height="625px"
               controls={true}
               playing={false}
+              light={ImageUrl}
               // light={true}
             />
           </div>
@@ -90,7 +93,7 @@ const Videorow = () => {
 
       <div className="seprator-lg" />
     </section>
-  );
-};
+  )
+}
 
-export default Videorow;
+export default Videorow

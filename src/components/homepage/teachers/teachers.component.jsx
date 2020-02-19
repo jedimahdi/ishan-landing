@@ -1,12 +1,13 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, {useContext} from 'react'
+import {Link} from 'react-router-dom'
 
-import { SettingsContext } from '../../../providers/settings/settings.provider';
+import {SettingsContext} from '../../../providers/settings/settings.provider'
+import ImageUrl from '../../../assets/images/teacher.jpg'
 
-import './teachers.styles.scss';
+import './teachers.styles.scss'
 
 const Teachers = () => {
-  const { settingItems } = useContext(SettingsContext);
+  const {settingItems} = useContext(SettingsContext)
 
   return (
     <section className="browse-instructors">
@@ -15,10 +16,11 @@ const Teachers = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-3 offset-md-1">
-            <div className="title">
-              {settingItems['homepage_teacher_title']}
-            </div>
-            <p>{settingItems['homepage_teacher_desc']}</p>
+            <div className="title">مربیان آموزشی</div>
+            <p>
+              استفاده از اساتید به نام و مجرب در جهت پرورش نیروهای خلاق و
+              توانمند که نیاز صنعت و بازار را به خوبی می شناسند
+            </p>
             <p>
               <Link to="/instructors" className="link-larger">
                 جستجو اساتید <i className="fa fa-long-arrow-left" />
@@ -26,17 +28,13 @@ const Teachers = () => {
             </p>
           </div>
           <div className="col-md-8">
-            <img
-              className="img-responsive"
-              src={settingItems['homepage_teacher_image']}
-              alt="instructors"
-            />
+            <img className="img-responsive" src={ImageUrl} alt="instructors" />
           </div>
         </div>
       </div>
 
       <div className="seprator-lg" />
     </section>
-  );
-};
-export default Teachers;
+  )
+}
+export default Teachers
