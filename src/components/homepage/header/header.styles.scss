@@ -190,6 +190,7 @@
   min-height: 100% !important;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  object-fit: cover;
 }
 
 @media (max-width: 992px) {

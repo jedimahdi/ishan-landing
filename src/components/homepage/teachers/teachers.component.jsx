@@ -1,14 +1,11 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom'
 
-import {SettingsContext} from '../../../providers/settings/settings.provider'
 import ImageUrl from '../../../assets/images/teacher.jpg'
 
 import './teachers.styles.scss'
 
 const Teachers = () => {
-  const {settingItems} = useContext(SettingsContext)
-
   return (
     <section className="browse-instructors">
       <div className="seprator-lg hidden-xs hidden-sm" />
