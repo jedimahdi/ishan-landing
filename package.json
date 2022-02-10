@@ -6,7 +6,7 @@
     "axios": "^0.19.2",
     "jalali-moment": "^3.3.3",
     "jalali-react-big-calendar": "^0.19.5",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "persianjs": "^0.4.0",
     "react": "^16.13.1",
     "react-big-calendar": "^0.24.1",
